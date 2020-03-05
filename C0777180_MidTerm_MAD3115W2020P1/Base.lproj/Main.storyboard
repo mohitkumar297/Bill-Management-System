@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="C0777180_MidTerm_MAD3115W2020P1" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,7 +53,7 @@
                         <color key="backgroundColor" red="0.90980392156862744" green="0.9137254901960784" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hRf-9i-6tL"/>
+                    <navigationItem key="navigationItem" title="Login" id="hRf-9i-6tL"/>
                     <connections>
                         <outlet property="emailTextField" destination="Xvm-TE-zc1" id="fD9-Xc-tko"/>
                         <outlet property="passwordTextField" destination="NbQ-J5-Ubf" id="ids-4K-bZ0"/>
@@ -65,17 +65,17 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="99.776785714285708"/>
         </scene>
-        <!--Customer View Controller-->
+        <!--Customer-->
         <scene sceneID="3Z6-Ng-gwa">
             <objects>
-                <viewController id="dam-rB-ZAU" customClass="CustomerViewController" customModule="C0777180_MidTerm_MAD3115W2020P1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Customer" id="dam-rB-ZAU" customClass="CustomerViewController" customModule="C0777180_MidTerm_MAD3115W2020P1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q1x-Le-eXa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="OM8-0x-xfO"/>
                     </view>
-                    <navigationItem key="navigationItem" id="wd1-Vb-bxv"/>
+                    <navigationItem key="navigationItem" title="Customer" id="wd1-Vb-bxv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IC6-Sd-F1A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
