@@ -16,4 +16,21 @@ extension String{
     let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
     return emailPred.evaluate(with: self)
 }
+    func formatCurrency(billAmount: Double) -> String{
+            return "$\(billAmount)"
+    }
+//    var currencyFormat : String{
+//        return "$\(self)"
+//    }
+    
+    func formatUnit(unitsConsumed: Int)->String{
+        return "         Units Consumed : \(unitsConsumed) Units "
+    }
+    
+    func gbConsumed(internetUsed: Int)->String{
+        return "         Internet consumed : \(internetUsed) GB "
+    }
+    func minUsed(minutesUsed: Int)->String{
+        return "         Minutes Usage : \(minutesUsed) minutes "
+    }
 }

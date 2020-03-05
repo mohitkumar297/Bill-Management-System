@@ -29,7 +29,7 @@ class Customer: IDisplay {
         self.firstName = firstName
         self.lastName = lastName
         
-        guard email.isValidEmail(email: email) else {
+        guard email.isValidEmail else {
             throw validEmail.invalidEmail(Problem: "\(email)")
         }
     
@@ -46,7 +46,7 @@ class Customer: IDisplay {
     func display(){
         print("Customer ID : \(customerId)")
         print("Customer Full Name : \(fullName)")
-        if email.isValidEmail(email: email){
+        if email.isValidEmail{
             print("Customer Email ID : \(email)")}
         print("         ------------Bill Information-------------    ")
         print("         ***************************************************")

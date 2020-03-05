@@ -32,5 +32,6 @@ class Bill:IDisplay{
         print("         Bill Type : \(billType!)")
         let d = "".formatCurrency(billAmount: billAmount)
         print("         Bill Amount : \(d)")
+        
     }
   }
