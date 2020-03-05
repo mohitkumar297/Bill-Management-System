@@ -23,11 +23,30 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
     }
 
     @IBAction func btnLogin(_ sender: UIButton) {
         
+        do{
+            try login()
+        }
+    }
+    
+    func login() throws{
+        let email = emailTextField.text!
+        let pass = passwordTextField.text!
+
+        if email.isEmpty || pass.isEmpty {
+            throw LoginError.incomplete
+        }
+        if !email.isValidEmail{
+            throw LoginError.emailError
+        }
+        if pass.count < 8 {
+            throw LoginError.passwordError
+        }
+
     }
     
 }
