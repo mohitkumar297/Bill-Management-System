@@ -38,8 +38,13 @@ class LoginViewController: UIViewController {
                 performSegue(withIdentifier: "segue", sender: self)
             }
             else{
-                print("Access denied")
+                let alertController = UIAlertController(title: "ERROR", message:
+                    "Access Denied", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+                self.present(alertController, animated: true, completion: nil)
             }
+            
         }catch LoginError.incomplete{
             let alertController = UIAlertController(title: "ERROR", message:
                 "Incomplete Form", preferredStyle: .alert)
