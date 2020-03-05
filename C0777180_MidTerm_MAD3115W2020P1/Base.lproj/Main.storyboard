@@ -72,10 +72,48 @@
                     <view key="view" contentMode="scaleToFill" id="q1x-Le-eXa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oae-14-ja9">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customerCell" textLabel="zJL-WZ-ITs" style="IBUITableViewCellStyleDefault" id="ag2-r6-JP5">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ag2-r6-JP5" id="bMJ-ds-K94">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zJL-WZ-ITs">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="dam-rB-ZAU" id="tlE-91-yqE"/>
+                                    <outlet property="delegate" destination="dam-rB-ZAU" id="bKt-jh-uak"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="OM8-0x-xfO" firstAttribute="bottom" secondItem="Oae-14-ja9" secondAttribute="bottom" id="380-3w-4ad"/>
+                            <constraint firstItem="OM8-0x-xfO" firstAttribute="trailing" secondItem="Oae-14-ja9" secondAttribute="trailing" id="MEC-q0-e7E"/>
+                            <constraint firstItem="Oae-14-ja9" firstAttribute="top" secondItem="OM8-0x-xfO" secondAttribute="top" id="o1a-wz-n7c"/>
+                            <constraint firstItem="Oae-14-ja9" firstAttribute="leading" secondItem="OM8-0x-xfO" secondAttribute="leading" id="wal-91-tZX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OM8-0x-xfO"/>
                     </view>
                     <navigationItem key="navigationItem" title="Customer" id="wd1-Vb-bxv"/>
+                    <connections>
+                        <outlet property="tblCustomers" destination="Oae-14-ja9" id="pj6-ye-aCu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IC6-Sd-F1A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

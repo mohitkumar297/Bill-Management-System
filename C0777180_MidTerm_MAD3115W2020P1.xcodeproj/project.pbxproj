@@ -71,8 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				E44DBA3B2410D34100B7CA58 /* AppDelegate.swift */,
-				E44DBA53241176D700B7CA58 /* main.swift */,
-				E44DBA552411786D00B7CA58 /* IDisplay.swift */,
 				E44DBA3D2410D34100B7CA58 /* SceneDelegate.swift */,
 				E44DBA3F2410D34100B7CA58 /* LoginViewController.swift */,
 				E44DBA412410D34100B7CA58 /* Main.storyboard */,
@@ -80,6 +78,8 @@
 				E44DBA442410D34400B7CA58 /* Assets.xcassets */,
 				E44DBA462410D34400B7CA58 /* LaunchScreen.storyboard */,
 				E44DBA492410D34400B7CA58 /* Info.plist */,
+				E44DBA53241176D700B7CA58 /* main.swift */,
+				E44DBA552411786D00B7CA58 /* IDisplay.swift */,
 				E44DBA4F2410DE4200B7CA58 /* StringExtension.swift */,
 				E44DBA57241178B800B7CA58 /* Customer.swift */,
 				E44DBA592411790D00B7CA58 /* Bill.swift */,
