@@ -27,7 +27,18 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+       let ud = UserDefaults.standard
+        let e = ud.string(forKey: "email")
+        let p = ud.string(forKey: "password")
+        
+        if let em = e {
+            emailTextField.text = "\(em)"
+        }
+        
+        if let pa = p {
+            passwordTextField.text = "\(pa)"
+        }
+        
     }
 
     @IBAction func btnLogin(_ sender: UIButton) {
@@ -35,6 +46,10 @@ class LoginViewController: UIViewController {
         do{
             try login()
             if emailTextField.text == email && passwordTextField.text == password{
+                if switchSave.isOn == true {
+                    UserDefaults.standard.set(emailTextField.text!, forKey: "email")
+                    UserDefaults.standard.set(passwordTextField.text!, forKey: "password")
+                }
                 performSegue(withIdentifier: "segue", sender: self)
             }
             else{
