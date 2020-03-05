@@ -11,6 +11,8 @@ import UIKit
 class LoginViewController: UIViewController {
     
     let email = "mohit@gmail.com"
+    let password = "mohit123"
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
