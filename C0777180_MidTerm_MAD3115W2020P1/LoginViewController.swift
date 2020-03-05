@@ -34,7 +34,12 @@ class LoginViewController: UIViewController {
         
         do{
             try login()
-            
+            if emailTextField.text == email && passwordTextField.text == password{
+                performSegue(withIdentifier: "segue", sender: self)
+            }
+            else{
+                print("Access denied")
+            }
         }catch LoginError.incomplete{
             let alertController = UIAlertController(title: "ERROR", message:
                 "Incomplete Form", preferredStyle: .alert)

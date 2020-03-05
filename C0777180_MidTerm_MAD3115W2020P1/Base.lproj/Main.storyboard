@@ -47,7 +47,6 @@
                                 </state>
                                 <connections>
                                     <action selector="btnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xgb-lQ-eWx"/>
-                                    <segue destination="dam-rB-ZAU" kind="show" id="vGu-vY-8WM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -59,6 +58,7 @@
                         <outlet property="emailTextField" destination="Xvm-TE-zc1" id="fD9-Xc-tko"/>
                         <outlet property="passwordTextField" destination="NbQ-J5-Ubf" id="ids-4K-bZ0"/>
                         <outlet property="switchSave" destination="hoq-8Q-agZ" id="Pl2-Vy-sDi"/>
+                        <segue destination="dam-rB-ZAU" kind="show" identifier="segue" id="Wpt-zf-lTY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
