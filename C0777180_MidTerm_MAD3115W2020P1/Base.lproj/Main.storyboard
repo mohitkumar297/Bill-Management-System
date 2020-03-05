@@ -47,6 +47,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xgb-lQ-eWx"/>
+                                    <segue destination="dam-rB-ZAU" kind="show" id="vGu-vY-8WM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -63,6 +64,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="99.776785714285708"/>
+        </scene>
+        <!--Customer View Controller-->
+        <scene sceneID="3Z6-Ng-gwa">
+            <objects>
+                <viewController id="dam-rB-ZAU" customClass="CustomerViewController" customModule="C0777180_MidTerm_MAD3115W2020P1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q1x-Le-eXa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="OM8-0x-xfO"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wd1-Vb-bxv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IC6-Sd-F1A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1751" y="100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OGn-Zo-YDq">
