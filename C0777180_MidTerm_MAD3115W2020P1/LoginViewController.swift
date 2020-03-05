@@ -9,12 +9,24 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
+    let email = "mohit@gmail.com"
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
+    @IBOutlet weak var switchSave: UISwitch!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func btnLogin(_ sender: UIButton) {
+        
+    }
+    
 }
 

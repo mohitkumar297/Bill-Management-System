@@ -45,12 +45,20 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xgb-lQ-eWx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90980392156862744" green="0.9137254901960784" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="hRf-9i-6tL"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="Xvm-TE-zc1" id="fD9-Xc-tko"/>
+                        <outlet property="passwordTextField" destination="NbQ-J5-Ubf" id="ids-4K-bZ0"/>
+                        <outlet property="switchSave" destination="hoq-8Q-agZ" id="Pl2-Vy-sDi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
