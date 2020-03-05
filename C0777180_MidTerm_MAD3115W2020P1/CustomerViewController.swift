@@ -23,12 +23,16 @@ class CustomerViewController: UIViewController {
     }
     
     func loadCustomers(){
-        customers.append(C1)
-        
-        
+        do{
+        customers.append(try Customer(customerId: "C301", firstName: "Steven", lastName: "Gerrard", email: "sgerrard@gmail.com"))
+    }catch validEmail.invalidEmail(let Problem){
+        print("Invalid Email Address : \(Problem)")
+    }
+    catch {
+        print("Unrecognised Error")
     }
 }
-    
+}
 extension CustomerViewController: UITableViewDelegate,UITableViewDataSource{
    
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -42,7 +46,7 @@ extension CustomerViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customerCell")
         let customer = customers[indexPath.row]
-        cell?.textLabel?.text = customer.firstName
+        cell?.textLabel?.text = customer.fullName
         
         return cell!
         

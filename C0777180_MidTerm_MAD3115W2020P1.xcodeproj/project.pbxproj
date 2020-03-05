@@ -15,7 +15,6 @@
 		E44DBA482410D34400B7CA58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E44DBA462410D34400B7CA58 /* LaunchScreen.storyboard */; };
 		E44DBA502410DE4200B7CA58 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DBA4F2410DE4200B7CA58 /* StringExtension.swift */; };
 		E44DBA522410E09200B7CA58 /* CustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DBA512410E09200B7CA58 /* CustomerViewController.swift */; };
-		E44DBA54241176D700B7CA58 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DBA53241176D700B7CA58 /* main.swift */; };
 		E44DBA562411786D00B7CA58 /* IDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DBA552411786D00B7CA58 /* IDisplay.swift */; };
 		E44DBA58241178B800B7CA58 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DBA57241178B800B7CA58 /* Customer.swift */; };
 		E44DBA5A2411790D00B7CA58 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DBA592411790D00B7CA58 /* Bill.swift */; };
@@ -33,7 +32,6 @@
 		E44DBA492410D34400B7CA58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E44DBA4F2410DE4200B7CA58 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		E44DBA512410E09200B7CA58 /* CustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewController.swift; sourceTree = "<group>"; };
-		E44DBA53241176D700B7CA58 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E44DBA552411786D00B7CA58 /* IDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDisplay.swift; sourceTree = "<group>"; };
 		E44DBA57241178B800B7CA58 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		E44DBA592411790D00B7CA58 /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 				E44DBA442410D34400B7CA58 /* Assets.xcassets */,
 				E44DBA462410D34400B7CA58 /* LaunchScreen.storyboard */,
 				E44DBA492410D34400B7CA58 /* Info.plist */,
-				E44DBA53241176D700B7CA58 /* main.swift */,
 				E44DBA552411786D00B7CA58 /* IDisplay.swift */,
 				E44DBA4F2410DE4200B7CA58 /* StringExtension.swift */,
 				E44DBA57241178B800B7CA58 /* Customer.swift */,
@@ -162,7 +159,6 @@
 				E44DBA502410DE4200B7CA58 /* StringExtension.swift in Sources */,
 				E44DBA5C2411794A00B7CA58 /* DateExtension.swift in Sources */,
 				E44DBA402410D34100B7CA58 /* LoginViewController.swift in Sources */,
-				E44DBA54241176D700B7CA58 /* main.swift in Sources */,
 				E44DBA58241178B800B7CA58 /* Customer.swift in Sources */,
 				E44DBA562411786D00B7CA58 /* IDisplay.swift in Sources */,
 				E44DBA522410E09200B7CA58 /* CustomerViewController.swift in Sources */,
