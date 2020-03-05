@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum LoginError: Error{
+case emailError, passwordError, incomplete
+}
+
 class LoginViewController: UIViewController {
     
     let email = "mohit@gmail.com"
@@ -30,6 +34,29 @@ class LoginViewController: UIViewController {
         
         do{
             try login()
+            
+        }catch LoginError.incomplete{
+            let alertController = UIAlertController(title: "ERROR", message:
+                "Incomplete Form", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+            self.present(alertController, animated: true, completion: nil)
+        }
+        catch  LoginError.emailError{
+            let alertController = UIAlertController(title: "ERROR", message:
+                "Invalid Email", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+            self.present(alertController, animated: true, completion: nil)
+        }catch LoginError.passwordError {
+            let alertController = UIAlertController(title: "ERROR", message:
+                "Invalid Password", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+            self.present(alertController, animated: true, completion: nil)
+        }
+        catch {
+            print("Unrecognized error")
         }
     }
     
