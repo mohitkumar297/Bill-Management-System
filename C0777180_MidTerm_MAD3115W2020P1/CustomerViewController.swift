@@ -12,26 +12,17 @@ class CustomerViewController: UIViewController {
 
     
     @IBOutlet weak var tblCustomers: UITableView!
-    lazy var customers:[Customer] = []
-    
-    
+    lazy var customerNames : [Customer] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadCustomers()
+        
+        customerNames = DataStorage.getInstance().getAllCustomers()
+        self.navigationItem.title = "Customer"
+        //self.navigationItem.hidesBackButton = true;
         // Do any additional setup after loading the view.
     }
-    
-    func loadCustomers(){
-        do{
-        customers.append(try Customer(customerId: "C301", firstName: "Steven", lastName: "Gerrard", email: "sgerrard@gmail.com"))
-    }catch validEmail.invalidEmail(let Problem){
-        print("Invalid Email Address : \(Problem)")
-    }
-    catch {
-        print("Unrecognised Error")
-    }
-}
+   
 }
 extension CustomerViewController: UITableViewDelegate,UITableViewDataSource{
    
@@ -40,12 +31,12 @@ extension CustomerViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return customers.count
+        return customerNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customerCell")
-        let customer = customers[indexPath.row]
+        let customer = customerNames[indexPath.row]
         cell?.textLabel?.text = customer.fullName
         
         return cell!

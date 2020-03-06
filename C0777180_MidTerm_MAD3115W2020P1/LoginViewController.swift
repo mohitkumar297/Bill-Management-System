@@ -27,10 +27,15 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       let ud = UserDefaults.standard
+        self.navigationItem.title = "Login"
+        
+        // back button name change only
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: "Logout", style: .done, target: nil, action: nil)
+        let ud = UserDefaults.standard
         let e = ud.string(forKey: "email")
         let p = ud.string(forKey: "password")
-        
+     
         if let em = e {
             emailTextField.text = "\(em)"
         }
