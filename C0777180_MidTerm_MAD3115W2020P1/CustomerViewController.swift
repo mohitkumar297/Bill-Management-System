@@ -19,9 +19,19 @@ class CustomerViewController: UIViewController {
         
         customerNames = DataStorage.getInstance().getAllCustomers()
         self.navigationItem.title = "Customer"
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+        title: "Customers", style: .done, target: nil, action: nil)
         //self.navigationItem.hidesBackButton = true;
         // Do any additional setup after loading the view.
     }
+    
+    
+    @IBAction func addNewCustomerBackBtn(_ sender: UIBarButtonItem) {
+        
+        self.performSegue(withIdentifier: "addNewCustomerSegue", sender: nil)
+        
+    }
+    
    
 }
 extension CustomerViewController: UITableViewDelegate,UITableViewDataSource{

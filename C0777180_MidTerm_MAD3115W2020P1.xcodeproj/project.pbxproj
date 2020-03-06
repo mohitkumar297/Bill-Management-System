@@ -20,6 +20,7 @@
 		E44DBA5A2411790D00B7CA58 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DBA592411790D00B7CA58 /* Bill.swift */; };
 		E44DBA5C2411794A00B7CA58 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DBA5B2411794A00B7CA58 /* DateExtension.swift */; };
 		E44DBA8424121DE100B7CA58 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DBA8324121DE100B7CA58 /* DataStorage.swift */; };
+		E44DBA862412C69600B7CA58 /* AddNewCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DBA852412C69600B7CA58 /* AddNewCustomerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E44DBA592411790D00B7CA58 /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		E44DBA5B2411794A00B7CA58 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		E44DBA8324121DE100B7CA58 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
+		E44DBA852412C69600B7CA58 /* AddNewCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCustomerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				E44DBA592411790D00B7CA58 /* Bill.swift */,
 				E44DBA5B2411794A00B7CA58 /* DateExtension.swift */,
 				E44DBA8324121DE100B7CA58 /* DataStorage.swift */,
+				E44DBA852412C69600B7CA58 /* AddNewCustomerViewController.swift */,
 			);
 			path = C0777180_MidTerm_MAD3115W2020P1;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			files = (
 				E44DBA502410DE4200B7CA58 /* StringExtension.swift in Sources */,
 				E44DBA5C2411794A00B7CA58 /* DateExtension.swift in Sources */,
+				E44DBA862412C69600B7CA58 /* AddNewCustomerViewController.swift in Sources */,
 				E44DBA402410D34100B7CA58 /* LoginViewController.swift in Sources */,
 				E44DBA58241178B800B7CA58 /* Customer.swift in Sources */,
 				E44DBA562411786D00B7CA58 /* IDisplay.swift in Sources */,

@@ -112,6 +112,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Customer" leftItemsSupplementBackButton="YES" id="wd1-Vb-bxv">
                         <barButtonItem key="backBarButtonItem" title="Logout" id="4pq-fl-J4b"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="R1r-E3-ohP">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addNewCustomerBackBtn:" destination="dam-rB-ZAU" id="nfd-dB-gYq"/>
+                                <segue destination="5wl-7m-IK7" kind="show" identifier="addNewCustomerSegue" id="PDm-qV-dxw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tblCustomers" destination="Oae-14-ja9" id="pj6-ye-aCu"/>
@@ -120,6 +127,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IC6-Sd-F1A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1751" y="100"/>
+        </scene>
+        <!--Add New Customer View Controller-->
+        <scene sceneID="gNo-va-ehy">
+            <objects>
+                <viewController id="5wl-7m-IK7" customClass="AddNewCustomerViewController" customModule="C0777180_MidTerm_MAD3115W2020P1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oPr-eR-WKv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="STw-OO-aO3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="otV-8y-R2a"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZmU-nl-MYM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2478" y="100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OGn-Zo-YDq">
