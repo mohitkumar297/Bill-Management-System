@@ -55,12 +55,21 @@ extension CustomerViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let select = customerNames[indexPath.row]
-        
-        if let VC = storyboard?.instantiateViewController(identifier: "billDetails") as? CustomerViewController{
-            VC.customerNames = [select]
+        //let select = customerNames[indexPath.row]
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        if let VC = sb.instantiateViewController(identifier: "billDetails") as? BillDetailsViewController {
+            //VC.customerNames = [select]
             navigationController?.pushViewController(VC, animated: true)
         }
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        //let destVC = segue.destination
+//        
+//        if segue.identifier == ""
+//        {
+//            
+//        }
+//    }
 }
 

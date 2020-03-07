@@ -68,13 +68,13 @@
         <!--Customer-->
         <scene sceneID="3Z6-Ng-gwa">
             <objects>
-                <viewController storyboardIdentifier="billDetails" title="Customer" id="dam-rB-ZAU" customClass="CustomerViewController" customModule="C0777180_MidTerm_MAD3115W2020P1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Customer" id="dam-rB-ZAU" customClass="CustomerViewController" customModule="C0777180_MidTerm_MAD3115W2020P1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q1x-Le-eXa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oae-14-ja9">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customerCell" textLabel="zJL-WZ-ITs" style="IBUITableViewCellStyleDefault" id="ag2-r6-JP5">
@@ -93,13 +93,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="jyz-AL-Mw0" kind="show" id="qFt-2W-T1m"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="dam-rB-ZAU" id="tlE-91-yqE"/>
+                                    <outlet property="dataSource" destination="dam-rB-ZAU" id="QU2-aN-vsf"/>
                                     <outlet property="delegate" destination="dam-rB-ZAU" id="bKt-jh-uak"/>
                                 </connections>
                             </tableView>
@@ -136,7 +133,7 @@
             <objects>
                 <viewController id="5wl-7m-IK7" customClass="AddNewCustomerViewController" customModule="C0777180_MidTerm_MAD3115W2020P1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oPr-eR-WKv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Customer ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pFe-AI-njl">
@@ -171,7 +168,6 @@
                                 </state>
                                 <connections>
                                     <action selector="showBack:" destination="5wl-7m-IK7" eventType="touchUpInside" id="usN-1t-ftL"/>
-                                    <segue destination="dam-rB-ZAU" kind="show" identifier="segueSave" id="lTd-8X-iu5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -197,14 +193,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZmU-nl-MYM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="EU8-qE-HFH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2476.811594202899" y="99.776785714285708"/>
+            <point key="canvasLocation" x="2564" y="-877"/>
         </scene>
         <!--Bill Details View Controller-->
         <scene sceneID="pR8-VR-5Me">
             <objects>
-                <viewController id="jyz-AL-Mw0" customClass="BillDetailsViewController" customModule="C0777180_MidTerm_MAD3115W2020P1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="billDetails" id="jyz-AL-Mw0" customClass="BillDetailsViewController" customModule="C0777180_MidTerm_MAD3115W2020P1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="weP-VR-afu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="GFN-Q4-Ltj"/>
@@ -234,8 +230,4 @@
             <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="PDm-qV-dxw"/>
-        <segue reference="lTd-8X-iu5"/>
-    </inferredMetricsTieBreakers>
 </document>
