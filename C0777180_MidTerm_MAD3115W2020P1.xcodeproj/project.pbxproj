@@ -21,6 +21,7 @@
 		E44DBA5C2411794A00B7CA58 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DBA5B2411794A00B7CA58 /* DateExtension.swift */; };
 		E44DBA8424121DE100B7CA58 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DBA8324121DE100B7CA58 /* DataStorage.swift */; };
 		E44DBA862412C69600B7CA58 /* AddNewCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DBA852412C69600B7CA58 /* AddNewCustomerViewController.swift */; };
+		E44DBAAC24132BF500B7CA58 /* BillDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DBAAB24132BF500B7CA58 /* BillDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E44DBA5B2411794A00B7CA58 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		E44DBA8324121DE100B7CA58 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		E44DBA852412C69600B7CA58 /* AddNewCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCustomerViewController.swift; sourceTree = "<group>"; };
+		E44DBAAB24132BF500B7CA58 /* BillDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				E44DBA5B2411794A00B7CA58 /* DateExtension.swift */,
 				E44DBA8324121DE100B7CA58 /* DataStorage.swift */,
 				E44DBA852412C69600B7CA58 /* AddNewCustomerViewController.swift */,
+				E44DBAAB24132BF500B7CA58 /* BillDetailsViewController.swift */,
 			);
 			path = C0777180_MidTerm_MAD3115W2020P1;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				E44DBA3C2410D34100B7CA58 /* AppDelegate.swift in Sources */,
 				E44DBA8424121DE100B7CA58 /* DataStorage.swift in Sources */,
 				E44DBA5A2411790D00B7CA58 /* Bill.swift in Sources */,
+				E44DBAAC24132BF500B7CA58 /* BillDetailsViewController.swift in Sources */,
 				E44DBA3E2410D34100B7CA58 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -53,13 +53,14 @@ extension CustomerViewController: UITableViewDelegate,UITableViewDataSource{
         return cell!
         
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let select = customerNames[indexPath.row]
+        
+        if let VC = storyboard?.instantiateViewController(identifier: "billDetails") as? CustomerViewController{
+            VC.customerNames = [select]
+            navigationController?.pushViewController(VC, animated: true)
+        }
     }
-    
-    @IBAction func unwin(segue: UIStoryboardSegue){}
-            
-    }
-    
-    
+}
 

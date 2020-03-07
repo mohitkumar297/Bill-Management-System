@@ -68,7 +68,7 @@
         <!--Customer-->
         <scene sceneID="3Z6-Ng-gwa">
             <objects>
-                <viewController title="Customer" id="dam-rB-ZAU" customClass="CustomerViewController" customModule="C0777180_MidTerm_MAD3115W2020P1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="billDetails" title="Customer" id="dam-rB-ZAU" customClass="CustomerViewController" customModule="C0777180_MidTerm_MAD3115W2020P1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q1x-Le-eXa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,6 +93,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="jyz-AL-Mw0" kind="show" id="qFt-2W-T1m"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -195,6 +198,22 @@
                 <exit id="EU8-qE-HFH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2476.811594202899" y="99.776785714285708"/>
+        </scene>
+        <!--Bill Details View Controller-->
+        <scene sceneID="pR8-VR-5Me">
+            <objects>
+                <viewController id="jyz-AL-Mw0" customClass="BillDetailsViewController" customModule="C0777180_MidTerm_MAD3115W2020P1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="weP-VR-afu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="GFN-Q4-Ltj"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jqv-Ev-Iju"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ah-QH-4BS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3217" y="108"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OGn-Zo-YDq">
