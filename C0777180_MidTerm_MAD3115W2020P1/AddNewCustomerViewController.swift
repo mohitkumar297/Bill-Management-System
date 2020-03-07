@@ -33,12 +33,10 @@ class AddNewCustomerViewController: UIViewController {
     @IBAction func saveBarBtn(_ sender: UIBarButtonItem) {
         do{
             if let id = idTxtField.text, let fn = firstNameTxtField.text , let ln = lastNameTxtField.text, let em = emailTxtField.text
-             {
+            {
                     DataStorage.getInstance().addCustomer(customer: try Customer(customerId: "\(id)", firstName: "\(fn)", lastName: "\(ln)", email: "\(em)"))
              
-           
-                
-        }
+            }
     }catch LoginError.emailError{
         print("Invalid Email Address")
     }
@@ -51,6 +49,6 @@ class AddNewCustomerViewController: UIViewController {
     @IBAction func showBack(_ sender: UIButton) {
         //performSegue(withIdentifier: "unwin", sender: self)
         self.navigationController?.popViewController(animated: true)
-    }
+            }
     
 }

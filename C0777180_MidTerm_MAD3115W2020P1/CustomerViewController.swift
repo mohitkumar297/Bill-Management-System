@@ -18,22 +18,21 @@ class CustomerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        customerNames = DataStorage.getInstance().getAllCustomers()
+       // customerNames = DataStorage.getInstance().getAllCustomers()
         self.navigationItem.title = "Customer"
         navigationItem.backBarButtonItem = UIBarButtonItem(
         title: "Customers", style: .done, target: nil, action: nil)
         //self.navigationItem.hidesBackButton = true;
         // Do any additional setup after loading the view.
+        
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        customerNames = DataStorage.getInstance().getAllCustomers()
+        tblCustomers.reloadData()
     }
     
     
-    @IBAction func addNewCustomerBackBtn(_ sender: UIBarButtonItem) {
-        
-        self.performSegue(withIdentifier: "addNewCustomerSegue", sender: nil)
-        
-    }
-    
-   
 }
 extension CustomerViewController: UITableViewDelegate,UITableViewDataSource{
    
@@ -55,11 +54,9 @@ extension CustomerViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let select = customerNames[indexPath.row]
         let sb = UIStoryboard(name: "Main", bundle: nil)
         if let VC = sb.instantiateViewController(identifier: "billDetails") as? BillDetailsViewController {
-            //VC.customerNames = [select]
-            navigationController?.pushViewController(VC, animated: true)
+            self.navigationController?.pushViewController(VC, animated: true)
         }
     }
     

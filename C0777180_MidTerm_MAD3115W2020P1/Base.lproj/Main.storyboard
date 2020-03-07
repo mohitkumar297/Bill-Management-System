@@ -115,8 +115,7 @@
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="R1r-E3-ohP">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="addNewCustomerBackBtn:" destination="dam-rB-ZAU" id="nfd-dB-gYq"/>
-                                <segue destination="5wl-7m-IK7" kind="show" identifier="addNewCustomerSegue" id="PDm-qV-dxw"/>
+                                <segue destination="5wl-7m-IK7" kind="show" id="Ebw-0g-w3Q"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -187,11 +186,9 @@
                         <outlet property="firstNameTxtField" destination="Aqj-64-zvy" id="T4L-9T-CGZ"/>
                         <outlet property="idTxtField" destination="pFe-AI-njl" id="DWZ-SV-moa"/>
                         <outlet property="lastNameTxtField" destination="V99-kr-iIu" id="DQn-4y-hlV"/>
-                        <segue destination="EU8-qE-HFH" kind="unwind" identifier="unwin" unwindAction="unwinWithSegue:" id="NeG-vN-lRn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZmU-nl-MYM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="EU8-qE-HFH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2564" y="-877"/>
         </scene>
