@@ -21,21 +21,35 @@ class AddNewCustomerViewController: UIViewController {
     @IBOutlet weak var emailTxtField: UITextField!
     
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.title = "New Customer"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func saveBarBtn(_ sender: UIBarButtonItem) {
+        do{
+            if let id = idTxtField.text, let fn = firstNameTxtField.text , let ln = lastNameTxtField.text, let em = emailTxtField.text
+             {
+                    DataStorage.getInstance().addCustomer(customer: try Customer(customerId: "\(id)", firstName: "\(fn)", lastName: "\(ln)", email: "\(em)"))
+             
+            
+                
+        }
+    }catch LoginError.emailError{
+        print("Invalid Email Address")
     }
-    */
-
+    catch {
+        print("Unrecognised Error")
+    }
+    
+   }
+    
+    @IBAction func showBack(_ sender: UIButton) {
+        performSegue(withIdentifier: "segueSave", sender: self)
+    }
+    
 }

@@ -29,10 +29,9 @@ class Customer: IDisplay {
         self.firstName = firstName
         self.lastName = lastName
         
-        guard email.isValidEmail else {
-            throw validEmail.invalidEmail(Problem: "\(email)")
+        guard email.isValidEmail else{
+            throw LoginError.emailError
         }
-    
         self.email = email
     }
     func calculatedBill() -> Double{

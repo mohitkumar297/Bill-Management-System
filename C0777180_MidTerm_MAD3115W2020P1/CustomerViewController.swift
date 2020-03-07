@@ -12,6 +12,7 @@ class CustomerViewController: UIViewController {
 
     
     @IBOutlet weak var tblCustomers: UITableView!
+   
     lazy var customerNames : [Customer] = []
     
     override func viewDidLoad() {

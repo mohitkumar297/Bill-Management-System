@@ -31,8 +31,8 @@ class DataStorage {
             customers.append(try Customer(customerId: "C302", firstName: "Sadio", lastName: "Mane", email: "Sadiom@yahoo.com"))
             customers.append(try Customer(customerId: "C303", firstName: "Jordan", lastName: "Henderson", email: "jorhen@gmail.IO"))
     
-        }catch validEmail.invalidEmail(let Problem){
-         print("Invalid Email Address : \(Problem)")
+        }catch LoginError.emailError{
+         print("Invalid Email Address")
     
         }
          catch {
