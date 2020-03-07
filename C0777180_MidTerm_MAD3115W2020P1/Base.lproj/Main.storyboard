@@ -188,9 +188,11 @@
                         <outlet property="firstNameTxtField" destination="Aqj-64-zvy" id="T4L-9T-CGZ"/>
                         <outlet property="idTxtField" destination="pFe-AI-njl" id="DWZ-SV-moa"/>
                         <outlet property="lastNameTxtField" destination="V99-kr-iIu" id="DQn-4y-hlV"/>
+                        <segue destination="EU8-qE-HFH" kind="unwind" identifier="unwin" unwindAction="unwinWithSegue:" id="NeG-vN-lRn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZmU-nl-MYM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="EU8-qE-HFH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2476.811594202899" y="99.776785714285708"/>
         </scene>
@@ -214,6 +216,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="PDm-qV-dxw"/>
         <segue reference="lTd-8X-iu5"/>
     </inferredMetricsTieBreakers>
 </document>

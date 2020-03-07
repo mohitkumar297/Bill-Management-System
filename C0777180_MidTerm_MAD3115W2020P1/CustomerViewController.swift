@@ -53,6 +53,11 @@ extension CustomerViewController: UITableViewDelegate,UITableViewDataSource{
         return cell!
         
     }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func unwin(segue: UIStoryboardSegue){}
             
     }
     

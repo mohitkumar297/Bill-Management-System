@@ -55,6 +55,12 @@ class LoginViewController: UIViewController {
                     UserDefaults.standard.set(emailTextField.text!, forKey: "email")
                     UserDefaults.standard.set(passwordTextField.text!, forKey: "password")
                 }
+                else {
+                    UserDefaults.standard.removeObject(forKey: "email")
+                    UserDefaults.standard.removeObject(forKey: "password")
+                    emailTextField.text = ""
+                    passwordTextField.text = ""
+                }
                 performSegue(withIdentifier: "segue", sender: self)
             }
             else{
