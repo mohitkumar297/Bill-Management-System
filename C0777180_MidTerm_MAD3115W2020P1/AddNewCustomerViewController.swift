@@ -36,7 +36,7 @@ class AddNewCustomerViewController: UIViewController {
              {
                     DataStorage.getInstance().addCustomer(customer: try Customer(customerId: "\(id)", firstName: "\(fn)", lastName: "\(ln)", email: "\(em)"))
              
-           // performSegue(withIdentifier: "segueSave", sender: self)
+           
                 
         }
     }catch LoginError.emailError{
@@ -49,8 +49,8 @@ class AddNewCustomerViewController: UIViewController {
    }
     
     @IBAction func showBack(_ sender: UIButton) {
-        performSegue(withIdentifier: "unwin", sender: self)
-        
+        //performSegue(withIdentifier: "unwin", sender: self)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
