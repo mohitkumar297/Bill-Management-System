@@ -28,10 +28,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Login"
-        
         // back button name change only
-        navigationItem.backBarButtonItem = UIBarButtonItem(
-            title: "Logout", style: .done, target: nil, action: nil)
+         navigationItem.backBarButtonItem = UIBarButtonItem(
+         title: "Logout", style: .done, target: nil, action: nil)
+        
+//        func backAction(){
+//            self.navigationController?.popViewController(animated: true)
+//        }
+        
         let ud = UserDefaults.standard
         let e = ud.string(forKey: "email")
         let p = ud.string(forKey: "password")

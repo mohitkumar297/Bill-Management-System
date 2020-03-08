@@ -18,18 +18,21 @@ class CustomerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // customerNames = DataStorage.getInstance().getAllCustomers()
-        self.navigationItem.title = "Customer"
+       //customerNames = DataStorage.getInstance().getAllCustomers()
+       // self.navigationItem.title = "Customer"
         navigationItem.backBarButtonItem = UIBarButtonItem(
         title: "Customers", style: .done, target: nil, action: nil)
-        //self.navigationItem.hidesBackButton = true;
-        // Do any additional setup after loading the view.
+        //self.navigationItem.setHidesBackButton(true, animated: false)
         
+    }
+    @objc func addTapped(){
+        self.navigationController?.popViewController(animated: true)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         customerNames = DataStorage.getInstance().getAllCustomers()
         tblCustomers.reloadData()
+        
     }
     
     
@@ -59,14 +62,5 @@ extension CustomerViewController: UITableViewDelegate,UITableViewDataSource{
             self.navigationController?.pushViewController(VC, animated: true)
         }
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        //let destVC = segue.destination
-//        
-//        if segue.identifier == ""
-//        {
-//            
-//        }
-//    }
 }
 
