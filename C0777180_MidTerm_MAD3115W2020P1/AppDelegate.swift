@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         DataStorage.getInstance().loadCustomers()
         Thread.sleep(forTimeInterval: 2.0)
-        
         return true
     }
 

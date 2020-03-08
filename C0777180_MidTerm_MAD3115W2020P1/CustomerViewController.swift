@@ -14,17 +14,15 @@ class CustomerViewController: UIViewController {
     @IBOutlet weak var tblCustomers: UITableView!
    
     lazy var customerNames : [Customer] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
        //customerNames = DataStorage.getInstance().getAllCustomers()
         self.navigationItem.title = "Customer"
         navigationItem.backBarButtonItem = UIBarButtonItem(
         title: "Customers", style: .done, target: nil, action: nil)
         //self.navigationItem.setHidesBackButton(true, animated: false)
         let navBar = self.navigationController?.navigationBar
-        navBar?.barTintColor = UIColor.gray
+        navBar?.barTintColor = #colorLiteral(red: 0.9098039216, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
         navBar?.isTranslucent = true
         
     }
@@ -75,6 +73,17 @@ extension CustomerViewController: UITableViewDelegate,UITableViewDataSource{
         let sb = UIStoryboard(name: "Main", bundle: nil)
         if let VC = sb.instantiateViewController(identifier: "billDetails") as? BillDetailsViewController {
             self.navigationController?.pushViewController(VC, animated: true)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if(indexPath.row % 2 == 0){
+           cell.backgroundColor = #colorLiteral(red: 0.5137254902, green: 0.5803921569, blue: 0.631372549, alpha: 1)
+            
+            
+        }
+        else {
+            cell.backgroundColor = #colorLiteral(red: 0.8196078431, green: 0.8431372549, blue: 0.8588235294, alpha: 1)
         }
     }
 }
