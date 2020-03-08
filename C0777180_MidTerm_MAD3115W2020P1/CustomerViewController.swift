@@ -16,24 +16,19 @@ class CustomerViewController: UIViewController {
     lazy var customerNames : [Customer] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-       //customerNames = DataStorage.getInstance().getAllCustomers()
         self.navigationItem.title = "Customer"
-        navigationItem.backBarButtonItem = UIBarButtonItem(
-        title: "Customers", style: .done, target: nil, action: nil)
-        //self.navigationItem.setHidesBackButton(true, animated: false)
+
         let navBar = self.navigationController?.navigationBar
         navBar?.barTintColor = #colorLiteral(red: 0.9098039216, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
         navBar?.isTranslucent = true
         
     }
-    @objc func addTapped(){
-        self.navigationController?.popViewController(animated: true)
-    }
+   
 
     override func viewWillAppear(_ animated: Bool) {
         customerNames = DataStorage.getInstance().getAllCustomers()
         tblCustomers.reloadData()
-        
+
     }
     
     

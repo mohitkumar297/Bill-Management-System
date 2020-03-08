@@ -28,7 +28,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Login"
-        // back button name change only
          navigationItem.backBarButtonItem = UIBarButtonItem(
          title: "Logout", style: .done, target: nil, action: nil)
         
