@@ -27,6 +27,9 @@ class AddNewCustomerViewController: UIViewController {
         super.viewDidLoad()
 
         self.navigationItem.title = "New Customer"
+        let navBar = self.navigationController?.navigationBar
+        navBar?.barTintColor = UIColor.gray
+        navBar?.isTranslucent = true
     }
     
     

@@ -12,6 +12,11 @@ class BillDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Bill Details"
+        let navBar = self.navigationController?.navigationBar
+        navBar?.barTintColor = UIColor.gray
+        navBar?.isTranslucent = true
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.white
 
         
     }

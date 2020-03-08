@@ -112,6 +112,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="wd1-Vb-bxv">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="nga-LT-6ST">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="logOut:" destination="dam-rB-ZAU" id="0aY-bE-iiY"/>
                             </connections>
@@ -231,4 +232,5 @@
             <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

@@ -23,6 +23,9 @@ class CustomerViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(
         title: "Customers", style: .done, target: nil, action: nil)
         //self.navigationItem.setHidesBackButton(true, animated: false)
+        let navBar = self.navigationController?.navigationBar
+        navBar?.barTintColor = UIColor.gray
+        navBar?.isTranslucent = true
         
     }
     @objc func addTapped(){
