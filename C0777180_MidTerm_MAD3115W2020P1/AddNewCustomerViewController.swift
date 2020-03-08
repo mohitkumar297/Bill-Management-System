@@ -48,7 +48,11 @@ class AddNewCustomerViewController: UIViewController {
              
             
     }catch LoginError.emailError{
-        print("Invalid Email Address")
+        let alertController = UIAlertController(title: "ERROR", message:
+            "Invalid Email", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+        self.present(alertController, animated: true, completion: nil)
     }
     catch {
         print("Unrecognised Error")
