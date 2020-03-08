@@ -110,8 +110,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OM8-0x-xfO"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Customer" leftItemsSupplementBackButton="YES" id="wd1-Vb-bxv">
-                        <barButtonItem key="backBarButtonItem" title="Logout" id="4pq-fl-J4b"/>
+                    <navigationItem key="navigationItem" id="wd1-Vb-bxv">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="nga-LT-6ST">
+                            <connections>
+                                <action selector="logOut:" destination="dam-rB-ZAU" id="0aY-bE-iiY"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="R1r-E3-ohP">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>

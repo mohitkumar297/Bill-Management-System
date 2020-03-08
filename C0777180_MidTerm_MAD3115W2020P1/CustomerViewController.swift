@@ -19,7 +19,7 @@ class CustomerViewController: UIViewController {
         super.viewDidLoad()
         
        //customerNames = DataStorage.getInstance().getAllCustomers()
-       // self.navigationItem.title = "Customer"
+        self.navigationItem.title = "Customer"
         navigationItem.backBarButtonItem = UIBarButtonItem(
         title: "Customers", style: .done, target: nil, action: nil)
         //self.navigationItem.setHidesBackButton(true, animated: false)
@@ -33,6 +33,18 @@ class CustomerViewController: UIViewController {
         customerNames = DataStorage.getInstance().getAllCustomers()
         tblCustomers.reloadData()
         
+    }
+    
+    
+    @IBAction func logOut(_ sender: UIBarButtonItem) {
+       let alert = UIAlertController(title: "Logged Out", message: "Session Over", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {
+               (_)in
+            self.navigationController?.popViewController(animated: true)
+           })
+        
+            alert.addAction(OKAction)
+           self.present(alert, animated: true, completion: nil)
     }
     
     
