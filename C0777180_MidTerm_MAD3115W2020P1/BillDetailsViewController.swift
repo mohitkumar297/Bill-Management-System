@@ -10,6 +10,11 @@ import UIKit
 
 class BillDetailsViewController: UIViewController {
 
+    @IBOutlet weak var customerInfo: UILabel!
+    //lazy var customerBill : [Customer] = []
+    var customerBill : Customer?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Bill Details"
@@ -17,19 +22,10 @@ class BillDetailsViewController: UIViewController {
         navBar?.barTintColor = UIColor.gray
         navBar?.isTranslucent = true
         navigationItem.leftBarButtonItem?.tintColor = UIColor.white
+        if let id = customerBill?.customerId, let fn = customerBill?.fullName, let em = customerBill?.email{
+            customerInfo.text = "Customer ID : \(id)\nCustomer Name : \(fn)\nCustomer Email : \(em)"
+            customerInfo.numberOfLines = 0
+     }
 
-        
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   }
 }

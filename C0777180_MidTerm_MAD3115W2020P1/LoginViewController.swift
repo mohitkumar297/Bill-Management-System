@@ -23,8 +23,7 @@ class LoginViewController: UIViewController {
     
     
     @IBOutlet weak var switchSave: UISwitch!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Login"

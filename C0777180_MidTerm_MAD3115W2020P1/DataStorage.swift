@@ -11,6 +11,7 @@ import Foundation
 class DataStorage {
     static private let instance = DataStorage()
     private lazy var customers : [Customer] = []
+    private lazy var bills : [Bill] = []
     private init(){
         
     }
