@@ -41,12 +41,16 @@ class DataStorage {
             customers.append(C1)
             customers.append(C2)
             customers.append(C3)
+            
             let i1 = DateComponents(calendar: calendar, year: 2019, month: 10, day: 26)
             let id1 = calendar.date(from: i1)
             let I1 = Internet(billId: "INT001",billDate: id1!, billType: BillType.Internet, billAmount: 55.9, providerName: "Rogers", internetUsed: 154)
             bills.updateValue(I1, forKey: "INT001")
             C1.bills=["b1": I1]
-    
+            let h1 = DateComponents(calendar: calendar, year: 2020, month: 01, day: 10)
+            let hd1 = calendar.date(from: h1)
+            var H1 = Hydro(billId: "HYD001", billDate: hd1!, billType: BillType.Hydro, billAmount: 280.90, agencyName: "Saint John Energy", unitsConsumed: 350)
+            
         }catch LoginError.emailError{
          print("Invalid Email Address")
     

@@ -23,6 +23,7 @@
 		E44DBA862412C69600B7CA58 /* AddNewCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DBA852412C69600B7CA58 /* AddNewCustomerViewController.swift */; };
 		E44DBAAC24132BF500B7CA58 /* BillDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DBAAB24132BF500B7CA58 /* BillDetailsViewController.swift */; };
 		E44DBAB02418D33600B7CA58 /* Internet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DBAAF2418D33600B7CA58 /* Internet.swift */; };
+		E4DB00B5241B0125001BA695 /* Hydro.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB00B4241B0125001BA695 /* Hydro.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		E44DBA852412C69600B7CA58 /* AddNewCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCustomerViewController.swift; sourceTree = "<group>"; };
 		E44DBAAB24132BF500B7CA58 /* BillDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailsViewController.swift; sourceTree = "<group>"; };
 		E44DBAAF2418D33600B7CA58 /* Internet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Internet.swift; sourceTree = "<group>"; };
+		E4DB00B4241B0125001BA695 /* Hydro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hydro.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				E44DBA8324121DE100B7CA58 /* DataStorage.swift */,
 				E44DBA852412C69600B7CA58 /* AddNewCustomerViewController.swift */,
 				E44DBAAB24132BF500B7CA58 /* BillDetailsViewController.swift */,
+				E4DB00B4241B0125001BA695 /* Hydro.swift */,
 			);
 			path = C0777180_MidTerm_MAD3115W2020P1;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4DB00B5241B0125001BA695 /* Hydro.swift in Sources */,
 				E44DBA502410DE4200B7CA58 /* StringExtension.swift in Sources */,
 				E44DBA5C2411794A00B7CA58 /* DateExtension.swift in Sources */,
 				E44DBA862412C69600B7CA58 /* AddNewCustomerViewController.swift in Sources */,
