@@ -11,9 +11,9 @@ import UIKit
 class BillDetailsViewController: UIViewController {
 
     @IBOutlet weak var customerInfo: UILabel!
-    //lazy var customerBill : [Customer] = []
+    lazy var Bills : [Bill] = []
     var customerBill : Customer?
-    
+    @IBOutlet weak var billInfo: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +22,18 @@ class BillDetailsViewController: UIViewController {
         navBar?.barTintColor = UIColor.gray
         navBar?.isTranslucent = true
         navigationItem.leftBarButtonItem?.tintColor = UIColor.white
+       
+      //  Bills = DataStorage.getInstance().getBills(customerId: "\(id)" ?? "0"!
         if let id = customerBill?.customerId, let fn = customerBill?.fullName, let em = customerBill?.email{
             customerInfo.text = "Customer ID : \(id)\nCustomer Name : \(fn)\nCustomer Email : \(em)"
             customerInfo.numberOfLines = 0
-     }
-
-   }
+          
+            if let abc = customerBill?.bills{
+                for(_,v) in abc{
+                    billInfo.text = "\(v.billId)"
+                }
+            }
+        
+    }
+  }
 }

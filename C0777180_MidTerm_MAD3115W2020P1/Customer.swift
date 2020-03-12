@@ -23,7 +23,7 @@ class Customer: IDisplay {
     lazy var bills : [String:Bill]=[:]
     lazy var totalBill: Double = calculatedBill()
     
-//https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html
+    //https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html
     init(customerId:String, firstName: String, lastName: String, email: String)throws {
         self.customerId = customerId
         self.firstName = firstName
@@ -33,6 +33,7 @@ class Customer: IDisplay {
             throw LoginError.emailError
         }
         self.email = email
+
     }
     func calculatedBill() -> Double{
         var t = 0.0
