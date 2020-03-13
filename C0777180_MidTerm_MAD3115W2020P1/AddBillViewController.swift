@@ -58,6 +58,7 @@ class AddBillViewController: UIViewController {
         
     }
         }
+         self.navigationController?.popViewController(animated: true)
         
     }
     func createDatePicker(){

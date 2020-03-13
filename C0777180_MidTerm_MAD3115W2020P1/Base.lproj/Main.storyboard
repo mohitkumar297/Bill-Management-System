@@ -335,6 +335,8 @@
                         <color key="backgroundColor" red="0.51372549019607838" green="0.58039215686274503" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="lPT-zN-w89"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="billAmountField" destination="WCz-uV-TLO" id="dNb-Ma-NHi"/>
                         <outlet property="billTypeField" destination="wyR-g5-ZzE" id="3ls-Xs-yeO"/>

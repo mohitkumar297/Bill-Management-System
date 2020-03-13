@@ -93,7 +93,7 @@ extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
                        if exists{
                            let v = customerBill?.bills["H"]
                         let str = v?.billDate.formatDate()
-                        cell.textLabel?.text = "Bill Id : \(v!.billId)\nBill Type : Internet\nBill Date : \(str!)\nBill Amount : \(v!.billAmount)"
+                        cell.textLabel?.text = "Bill Id : \(v!.billId)\nBill Type : Hydro\nBill Date : \(str!)\nBill Amount : \(v!.billAmount)"
                         cell.textLabel?.numberOfLines = 0
                    }
             else {
@@ -107,7 +107,7 @@ extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
                 if exists{
                     let v = customerBill?.bills["M"]
                  let str = v?.billDate.formatDate()
-                 cell.textLabel?.text = "Bill Id : \(v!.billId)\nBill Type : Internet\nBill Date : \(str!)\nBill Amount : \(v!.billAmount)"
+                 cell.textLabel?.text = "Bill Id : \(v!.billId)\nBill Type : Mobile\nBill Date : \(str!)\nBill Amount : \(v!.billAmount)"
                  cell.textLabel?.numberOfLines = 0
             }
             else {
