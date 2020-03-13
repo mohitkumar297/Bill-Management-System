@@ -23,13 +23,31 @@ class AddBillViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createBillPicker()
-        
+        createToolBar()
     }
     
     func createBillPicker(){
         let billPicker = UIPickerView()
         billPicker.delegate = self
         billTypeField.inputView = billPicker
+    }
+    func createToolBar(){
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(AddBillViewController.dismissKeyboard))
+       let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(AddBillViewController.cancelClick))
+        toolBar.setItems([cancelButton,doneButton], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        billTypeField.inputAccessoryView = toolBar
+        
+    }
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
+    }
+    @objc func cancelClick(){
+        billTypeField.resignFirstResponder()
     }
 }
 
