@@ -17,6 +17,8 @@ class AddBillViewController: UIViewController {
     @IBOutlet weak var billTypeField: UITextField!
     
     @IBOutlet weak var billAmountField: UITextField!
+    var selectedCustomer: Customer?
+    
     
     let types = ["Mobile","Hydro","Internet"]
     var selectedType : String?
@@ -25,8 +27,39 @@ class AddBillViewController: UIViewController {
         createBillPicker()
         createDatePicker()
         createToolBar()
+        
+        
+        
     }
     
+    @IBAction func saveBtn(_ sender: UIButton) {
+        if let id = idField.text, let df = dateField.text , let btf = billTypeField.text, let baf = billAmountField.text
+                    
+                { if id == "" || df == "" || btf == "" || baf == "" {
+                    let alertController = UIAlertController(title: "ERROR", message:
+                        "Incomplete Form", preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                
+                    else{
+                    if df == "Internet"{
+                        selectedCustomer?.bills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Internet, billAmount: Double(baf)!), forKey: "I")
+                    }
+                    else if df == "Hydro"{
+                        selectedCustomer?.bills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Hydro, billAmount: Double(baf)!), forKey: "H")
+                    }
+                 else if df == "Mobile"{
+                     selectedCustomer?.bills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Mobile, billAmount: Double(baf)!), forKey: "M")
+                 }
+                
+        
+        
+    }
+        }
+        
+    }
     func createDatePicker(){
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date

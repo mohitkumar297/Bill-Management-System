@@ -35,11 +35,13 @@ class BillDetailsViewController: UIViewController {
        }
      }
     @objc func addTapped(){
+        let choice = customerBill!
         let sb = UIStoryboard(name: "Main", bundle: nil)
         if let VC = sb.instantiateViewController(identifier: "addBillCell") as? AddBillViewController {
             self.navigationController?.pushViewController(VC, animated: true)
+            VC.selectedCustomer = choice
     }
-}
+  }
 }
 extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
     

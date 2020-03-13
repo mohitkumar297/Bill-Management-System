@@ -327,6 +327,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveBtn:" destination="U0U-fb-7eq" eventType="touchUpInside" id="JKV-8M-kxF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.51372549019607838" green="0.58039215686274503" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
