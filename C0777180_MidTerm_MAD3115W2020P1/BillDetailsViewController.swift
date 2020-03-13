@@ -38,6 +38,7 @@ class BillDetailsViewController: UIViewController {
      }
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
+           self.Bills = (customerBill?.getBills())!
            self.tblView.reloadData()
        }
     @objc func addTapped(){
