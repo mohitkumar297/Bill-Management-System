@@ -98,7 +98,7 @@ extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
         if bill.billId.contains("INT"){
                 let str = bill.billDate.formatDate()
             let formatBillAmount = "\(bill.billAmount)".formatCurrency()
-            cell.textLabel?.text = "Bill Id : \(bill.billId)\nBill Type : Internet\nBill Date : \(str)\nBill Amount : \(formatBillAmount)"
+            cell.textLabel?.text = "Bill Id      : \(bill.billId)\nBill Type        : Internet\nBill Date       : \(str)\nBill Amount     : \(formatBillAmount)"
                  cell.textLabel?.numberOfLines = 0
         }
         
@@ -124,11 +124,12 @@ extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
         if(indexPath.row % 2 == 0){
            cell.backgroundColor = #colorLiteral(red: 0.5137254902, green: 0.5803921569, blue: 0.631372549, alpha: 1)
             cell.textLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 17)
             
         }
         else {
             cell.backgroundColor = #colorLiteral(red: 0.8196078431, green: 0.8431372549, blue: 0.8588235294, alpha: 1)
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         }
     }
 
