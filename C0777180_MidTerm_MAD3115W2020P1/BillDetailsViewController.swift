@@ -28,14 +28,10 @@ class BillDetailsViewController: UIViewController {
         if let id = customerBill?.customerId, let fn = customerBill?.fullName, let em = customerBill?.email, let am = customerBill?.calculatedBill(){
             customerInfo.text = "Customer ID : \(id)\nCustomer Name : \(fn)\nCustomer Email : \(em)\nTotal Bill : \(am)"
             customerInfo.numberOfLines = 0
-          
-//            if let abc = customerBill?.bills{
-//                for(_,v) in abc{
-//                    if v.billId.contains("INT"){
-//                    billInfo.text = "Bill Id : \(v.billId)\nBill Amount : \(v.billAmount)"
-//                }
-//             }
-//          }
+            customerInfo.font = UIFont.boldSystemFont(ofSize: 17)
+            customerInfo.backgroundColor = UIColor.blue
+            customerInfo.textColor = UIColor.green
+            
        }
      }
 }
