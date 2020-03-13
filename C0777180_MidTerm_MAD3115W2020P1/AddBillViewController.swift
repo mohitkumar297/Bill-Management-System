@@ -23,9 +23,22 @@ class AddBillViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createBillPicker()
+        createDatePicker()
         createToolBar()
     }
     
+    func createDatePicker(){
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.addTarget(self, action: #selector(AddBillViewController.dateChanged(datePicker:)), for: .valueChanged)
+        dateField.inputView = datePicker
+        
+    }
+    
+    @objc func dateChanged(datePicker: UIDatePicker){
+        let 
+        datePicker.date
+    }
     func createBillPicker(){
         let billPicker = UIPickerView()
         billPicker.delegate = self
