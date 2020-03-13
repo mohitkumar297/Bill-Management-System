@@ -47,10 +47,10 @@ class AddBillViewController: UIViewController {
                     if id.contains("INT"){
                         selectedCustomer?.customerBills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Internet, billAmount: Double(baf)!), forKey: "\(id)")
                     }
-                    else if df == "Hydro"{
+                    else if id.contains("HYD"){
                         selectedCustomer?.customerBills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Hydro, billAmount: Double(baf)!), forKey: "\(id)")
                     }
-                 else if df == "Mobile"{
+                    else if id.contains("MOB"){
                      selectedCustomer?.customerBills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Mobile, billAmount: Double(baf)!), forKey: "\(id)")
                  }
                 

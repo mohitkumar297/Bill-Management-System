@@ -47,7 +47,7 @@ class DataStorage {
             bills.updateValue(H1, forKey: "HYD001")
             let m1 = DateComponents(calendar: calendar, year: 2019, month: 12, day: 21)
             let md1 = calendar.date(from: m1)
-                let M1 = try Mobile(billId: "MOB101", billDate: md1!, billType: BillType.Mobile, billAmount: 100.53, modelName: "Apple X", mobileNumber: "9865473127", internetUsed: 14, minuteUsed: 351, planName: "15 GB Mega Deal")
+                let M1 = try Mobile(billId: "MOB101", billDate: md1!, billType: BillType.Mobile, billAmount: 100.63, modelName: "Apple X", mobileNumber: "9865473127", internetUsed: 14, minuteUsed: 351, planName: "15 GB Mega Deal")
             bills.updateValue(M1, forKey: "MOB101")
             C1.customerBills.updateValue(M1, forKey: "MOB101")
             

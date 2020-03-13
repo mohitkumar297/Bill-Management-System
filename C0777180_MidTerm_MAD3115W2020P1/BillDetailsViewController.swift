@@ -29,7 +29,8 @@ class BillDetailsViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Bill", style: .plain, target: self, action: #selector(addTapped))
         self.tblView.reloadData()
         if let id = customerBill?.customerId, let fn = customerBill?.fullName, let em = customerBill?.email, let am = customerBill?.totalBill{
-            customerInfo.text = "Customer ID : \(id)\nCustomer Name : \(fn)\nCustomer Email : \(em)\nTotal Bill : \(am)"
+            let formatAmount = "\(am)".formatCurrency()
+            customerInfo.text = "Customer ID : \(id)\nCustomer Name : \(fn)\nCustomer Email : \(em)\nTotal Bill : \(formatAmount)"
             customerInfo.numberOfLines = 0
             customerInfo.font = UIFont.boldSystemFont(ofSize: 17)
             customerInfo.backgroundColor = UIColor.blue
@@ -41,7 +42,8 @@ class BillDetailsViewController: UIViewController {
            super.viewWillAppear(animated)
         
         if let id = customerBill?.customerId, let fn = customerBill?.fullName, let em = customerBill?.email, let am = customerBill?.calculatedBill(){
-        customerInfo.text = "Customer ID : \(id)\nCustomer Name : \(fn)\nCustomer Email : \(em)\nTotal Bill : \(am)"
+        let formatAmount = "\(am)".formatCurrency()
+        customerInfo.text = "Customer ID : \(id)\nCustomer Name : \(fn)\nCustomer Email : \(em)\nTotal Bill : \(formatAmount)"
         customerInfo.numberOfLines = 0
         customerInfo.font = UIFont.boldSystemFont(ofSize: 17)
         customerInfo.backgroundColor = UIColor.blue
@@ -92,40 +94,32 @@ extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "billCell", for: indexPath)
         let bill = Bills[indexPath.row]
-        if bill.billId.contains("INT"){
         
-        //if indexPath.section == 0{
+        if bill.billId.contains("INT"){
                 let str = bill.billDate.formatDate()
-                 cell.textLabel?.text = "Bill Id : \(bill.billId)\nBill Type : Internet\nBill Date : \(str)\nBill Amount : \(bill.billAmount)"
+            let formatBillAmount = "\(bill.billAmount)".formatCurrency()
+            cell.textLabel?.text = "Bill Id : \(bill.billId)\nBill Type : Internet\nBill Date : \(str)\nBill Amount : \(formatBillAmount)"
                  cell.textLabel?.numberOfLines = 0
-
-       // }
         }
+        
         if bill.billId.contains("HYD"){
-        // if indexPath.section == 1{
-                
                     let str = bill.billDate.formatDate()
-                    cell.textLabel?.text = "Bill Id : \(bill.billId)\nBill Type : Hydro\nBill Date : \(str)\nBill Amount : \(bill.billAmount)"
+                    let formatBillAmount = "\(bill.billAmount)".formatCurrency()
+                    cell.textLabel?.text = "Bill Id : \(bill.billId)\nBill Type : Internet\nBill Date : \(str)\nBill Amount : \(formatBillAmount)"
                     cell.textLabel?.numberOfLines = 0
 
 
         }
-       // }
+        
         if bill.billId.contains("MOB"){
-       // if indexPath.section == 2
-         //{
-            
                 let str = bill.billDate.formatDate()
-                 cell.textLabel?.text = "Bill Id : \(bill.billId)\nBill Type : Mobile\nBill Date : \(str)\nBill Amount : \(bill.billAmount)"
+                 let formatBillAmount = "\(bill.billAmount)".formatCurrency()
+                 cell.textLabel?.text = "Bill Id : \(bill.billId)\nBill Type : Internet\nBill Date : \(str)\nBill Amount : \(formatBillAmount)"
                  cell.textLabel?.numberOfLines = 0
 
             
 
         }
-       // }
             return cell
-    
-    
-
 }
 }
