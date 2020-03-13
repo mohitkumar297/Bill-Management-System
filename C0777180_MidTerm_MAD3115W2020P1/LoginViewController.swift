@@ -43,19 +43,19 @@ class LoginViewController: UIViewController {
         }
         
     }
-
+    
     
     @IBAction func btnLogin(_ sender: UIButton) {
         guard let access = getPlist(withName: "AccessUsers") else{
-        print("no no")
+            print("no no")
             return
         }
-
+        
         do{
             try login()
             var canEnter = false
             for (k,v) in access{
-                    if emailTextField.text! == k && passwordTextField.text! == v{
+                if emailTextField.text! == k && passwordTextField.text! == v{
                     canEnter = true
                 }
             }
@@ -111,7 +111,7 @@ class LoginViewController: UIViewController {
         {
             return (try? PropertyListSerialization.propertyList(from: xml, options: .mutableContainersAndLeaves, format: nil)) as? [String: String]
         }
-
+        
         return nil
     }
     
