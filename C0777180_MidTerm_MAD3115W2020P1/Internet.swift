@@ -8,24 +8,24 @@
 import Foundation
 
 class Internet: Bill {
-     var providerName = String()
-     var internetUsed: Int=0
+    var providerName = String()
+    var internetUsed: Int=0
     
-   
+    
     init(billId: String, billDate: Date, billType: BillType, billAmount: Double,providerName:String,internetUsed:Int) {
         super.init(billId: billId, billDate: billDate, billType: billType, billAmount: billAmount)
-    
+        
         self.providerName = providerName
         self.internetUsed = internetUsed
-
+        
     }
     
-    override func display() {
-        super.display()
-        print("         Provider Name is : \(providerName)")
-        print("".gbConsumed(internetUsed: internetUsed))
-        print("         ***************************************************")
-    }
+    //    override func display() {
+    //        super.display()
+    //        print("         Provider Name is : \(providerName)")
+    //        print("".gbConsumed(internetUsed: internetUsed))
+    //        print("         ***************************************************")
+    //    }
     
     
 }

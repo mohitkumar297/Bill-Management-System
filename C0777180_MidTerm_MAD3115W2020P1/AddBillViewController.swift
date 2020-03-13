@@ -9,7 +9,7 @@
 import UIKit
 
 class AddBillViewController: UIViewController {
-
+    
     @IBOutlet weak var idField: UITextField!
     
     @IBOutlet weak var dateField: UITextField!
@@ -31,49 +31,49 @@ class AddBillViewController: UIViewController {
     
     @IBAction func saveBtn(_ sender: UIButton) {
         if let id = idField.text, let df = dateField.text , let btf = billTypeField.text, let baf = billAmountField.text
-                    
-                { if id == "" || df == "" || btf == "" || baf == "" {
-                    let alertController = UIAlertController(title: "ERROR", message:
-                        "Incomplete Form", preferredStyle: .alert)
-                    alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-
-                    self.present(alertController, animated: true, completion: nil)
-                }
-                else if btf == "Mobile" && !id.hasPrefix("MOB"){
-                    let alertController = UIAlertController(title: "ERROR", message:
-                        "ID should start with MOB", preferredStyle: .alert)
-                    alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-
-                    self.present(alertController, animated: true, completion: nil)
-                }
-                    else if btf == "Hydro" && !id.hasPrefix("HYD"){
-                        let alertController = UIAlertController(title: "ERROR", message:
-                            "ID should start with HYD", preferredStyle: .alert)
-                        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-
-                        self.present(alertController, animated: true, completion: nil)
-                    }
-                    else if btf == "Internet" && !id.hasPrefix("INT"){
-                        let alertController = UIAlertController(title: "ERROR", message:
-                            "ID should start with INT", preferredStyle: .alert)
-                        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-
-                        self.present(alertController, animated: true, completion: nil)
-                    }
-                    else{
-                    if id.contains("INT"){
-                        selectedCustomer?.customerBills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Internet, billAmount: Double(baf)!), forKey: "\(id)")
-                    }
-                    else if id.contains("HYD"){
-                        selectedCustomer?.customerBills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Hydro, billAmount: Double(baf)!), forKey: "\(id)")
-                    }
-                    else if id.contains("MOB"){
-                     selectedCustomer?.customerBills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Mobile, billAmount: Double(baf)!), forKey: "\(id)")
-                 }
-
-    }
-    }
-         self.navigationController?.popViewController(animated: true)
+            
+        { if id == "" || df == "" || btf == "" || baf == "" {
+            let alertController = UIAlertController(title: "ERROR", message:
+                "Incomplete Form", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else if btf == "Mobile" && !id.hasPrefix("MOB"){
+            let alertController = UIAlertController(title: "ERROR", message:
+                "ID should start with MOB", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else if btf == "Hydro" && !id.hasPrefix("HYD"){
+            let alertController = UIAlertController(title: "ERROR", message:
+                "ID should start with HYD", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else if btf == "Internet" && !id.hasPrefix("INT"){
+            let alertController = UIAlertController(title: "ERROR", message:
+                "ID should start with INT", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else{
+            if id.contains("INT"){
+                selectedCustomer?.customerBills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Internet, billAmount: Double(baf)!), forKey: "\(id)")
+            }
+            else if id.contains("HYD"){
+                selectedCustomer?.customerBills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Hydro, billAmount: Double(baf)!), forKey: "\(id)")
+            }
+            else if id.contains("MOB"){
+                selectedCustomer?.customerBills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Mobile, billAmount: Double(baf)!), forKey: "\(id)")
+            }
+            
+            }
+        }
+        self.navigationController?.popViewController(animated: true)
         
     }
     func createDatePicker(){
@@ -99,7 +99,7 @@ class AddBillViewController: UIViewController {
         toolBar.sizeToFit()
         
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(AddBillViewController.dismissKeyboard))
-       let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(AddBillViewController.cancelClick))
         toolBar.setItems([cancelButton,spaceButton,doneButton], animated: true)
         toolBar.isUserInteractionEnabled = true

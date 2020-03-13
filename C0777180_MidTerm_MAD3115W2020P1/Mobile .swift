@@ -14,13 +14,13 @@ enum mobileCount: Error{
 
 class Mobile: Bill
 {
-      var modelName: String?
-      var mobileNumber: String = ""
-      var planName: String = ""
-      var internetUsed: Int=0
-      var minuteUsed: Int=0
+    var modelName: String?
+    var mobileNumber: String = ""
+    var planName: String = ""
+    var internetUsed: Int=0
+    var minuteUsed: Int=0
     
-
+    
     init(billId: String, billDate: Date, billType: BillType, billAmount: Double,modelName: String, mobileNumber: String, internetUsed: Int, minuteUsed: Int,planName: String) throws {
         super.init(billId: billId, billDate: billDate, billType: billType, billAmount: billAmount)
         self.modelName = modelName
@@ -34,17 +34,17 @@ class Mobile: Bill
         self.internetUsed = internetUsed
         self.minuteUsed = minuteUsed
     }
- 
     
-    override func display() {
-        super.display()
-        print("         Manufacturer Name : \(self.modelName!)")
-        print("         Mobile Number : \(self.mobileNumber)")
-        print("         Plan name is: \(self.planName)")
-        print("".gbConsumed(internetUsed: internetUsed))
-        var q = ""
-        q = q.minUsed(minutesUsed: minuteUsed)
-        print(q)
-        print("         ***************************************************")
-    }
+    
+    //    override func display() {
+    //        super.display()
+    //        print("         Manufacturer Name : \(self.modelName!)")
+    //        print("         Mobile Number : \(self.mobileNumber)")
+    //        print("         Plan name is: \(self.planName)")
+    //        print("".gbConsumed(internetUsed: internetUsed))
+    //        var q = ""
+    //        q = q.minUsed(minutesUsed: minuteUsed)
+    //        print(q)
+    //        print("         ***************************************************")
+    //    }
 }

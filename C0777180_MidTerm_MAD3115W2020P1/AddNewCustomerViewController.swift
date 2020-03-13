@@ -9,7 +9,7 @@
 import UIKit
 
 class AddNewCustomerViewController: UIViewController {
-
+    
     @IBOutlet weak var idTxtField: UITextField!
     
     @IBOutlet weak var firstNameTxtField: UITextField!
@@ -21,11 +21,11 @@ class AddNewCustomerViewController: UIViewController {
     @IBOutlet weak var emailTxtField: UITextField!
     
     
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.navigationItem.title = "New Customer"
         let navBar = self.navigationController?.navigationBar
         navBar?.barTintColor = #colorLiteral(red: 0.9098039216, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
@@ -35,35 +35,35 @@ class AddNewCustomerViewController: UIViewController {
     
     @IBAction func saveBarBtn(_ sender: UIBarButtonItem) {
         
-            if let id = idTxtField.text, let fn = firstNameTxtField.text , let ln = lastNameTxtField.text, let em = emailTxtField.text
+        if let id = idTxtField.text, let fn = firstNameTxtField.text , let ln = lastNameTxtField.text, let em = emailTxtField.text
+            
+        { if id == "" || fn == "" || ln == "" {
+            let alertController = UIAlertController(title: "ERROR", message:
+                "Incomplete Form", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+            
+        else{
+            do{
+                DataStorage.getInstance().addCustomer(customer: try Customer(customerId: "\(id)", firstName: "\(fn)", lastName: "\(ln)", email: "\(em)"))
                 
-            { if id == "" || fn == "" || ln == "" {
+                self.navigationController?.popViewController(animated: true)
+            }catch LoginError.emailError{
                 let alertController = UIAlertController(title: "ERROR", message:
-                    "Incomplete Form", preferredStyle: .alert)
+                    "Invalid Email", preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-
+                
                 self.present(alertController, animated: true, completion: nil)
             }
+            catch {
+                print("Unrecognised Error")
+            }
             
-                else{
-                do{
-                    DataStorage.getInstance().addCustomer(customer: try Customer(customerId: "\(id)", firstName: "\(fn)", lastName: "\(ln)", email: "\(em)"))
-             
-            self.navigationController?.popViewController(animated: true)
-    }catch LoginError.emailError{
-        let alertController = UIAlertController(title: "ERROR", message:
-            "Invalid Email", preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-
-        self.present(alertController, animated: true, completion: nil)
+            }
+        }
     }
-    catch {
-        print("Unrecognised Error")
-    }
-    
-   }
- }
-}
 }
 
 

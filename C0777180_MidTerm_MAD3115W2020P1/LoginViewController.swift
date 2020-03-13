@@ -9,7 +9,7 @@
 import UIKit
 
 enum LoginError: Error{
-case emailError, passwordError, incomplete
+    case emailError, passwordError, incomplete
 }
 
 class LoginViewController: UIViewController {
@@ -23,17 +23,17 @@ class LoginViewController: UIViewController {
     
     
     @IBOutlet weak var switchSave: UISwitch!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Login"
-         navigationItem.backBarButtonItem = UIBarButtonItem(
-         title: "Logout", style: .done, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: "Logout", style: .done, target: nil, action: nil)
         
         let ud = UserDefaults.standard
         let e = ud.string(forKey: "email")
         let p = ud.string(forKey: "password")
-     
+        
         if let em = e {
             emailTextField.text = "\(em)"
         }
@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
         }
         
     }
-
+    
     @IBAction func btnLogin(_ sender: UIButton) {
         
         do{
@@ -65,7 +65,7 @@ class LoginViewController: UIViewController {
                 let alertController = UIAlertController(title: "ERROR", message:
                     "Access Denied", preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-
+                
                 self.present(alertController, animated: true, completion: nil)
             }
             
@@ -73,20 +73,20 @@ class LoginViewController: UIViewController {
             let alertController = UIAlertController(title: "ERROR", message:
                 "Incomplete Form", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-
+            
             self.present(alertController, animated: true, completion: nil)
         }
         catch  LoginError.emailError{
             let alertController = UIAlertController(title: "ERROR", message:
                 "Invalid Email", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-
+            
             self.present(alertController, animated: true, completion: nil)
         }catch LoginError.passwordError {
             let alertController = UIAlertController(title: "ERROR", message:
                 "Invalid Password", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-
+            
             self.present(alertController, animated: true, completion: nil)
         }
         catch {
@@ -97,7 +97,7 @@ class LoginViewController: UIViewController {
     func login() throws{
         let email = emailTextField.text!
         let pass = passwordTextField.text!
-
+        
         if email.isEmpty || pass.isEmpty {
             throw LoginError.incomplete
         }
@@ -107,7 +107,7 @@ class LoginViewController: UIViewController {
         if pass.count < 8 {
             throw LoginError.passwordError
         }
-
+        
     }
     
 }

@@ -11,17 +11,15 @@ import Foundation
 
 extension String{
     var isValidEmail : Bool {
-    let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-
-    let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-    return emailPred.evaluate(with: self)
-}
-    func formatCurrency() -> String{
-            return "$\(self)"
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: self)
     }
-//    var currencyFormat : String{
-//        return "$\(self)"
-//    }
+    func formatCurrency() -> String{
+        return "$\(self)"
+    }
+    
     
     func formatUnit(unitsConsumed: Int)->String{
         return "         Units Consumed : \(unitsConsumed) Units "
@@ -34,11 +32,11 @@ extension String{
         return "         Minutes Usage : \(minutesUsed) minutes "
     }
     func toDate(withFormat format: String = "EEEE, dd MMMM, yyyy") -> Date {
-      let dateFormatter = DateFormatter()
-      dateFormatter.dateFormat = format
-      guard let date = dateFormatter.date(from: self) else {
-        preconditionFailure("Take a look to your format")
-      }
-      return date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        guard let date = dateFormatter.date(from: self) else {
+            preconditionFailure("Wrong format")
+        }
+        return date
     }
 }

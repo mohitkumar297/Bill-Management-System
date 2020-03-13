@@ -36,7 +36,7 @@ class DataStorage {
             let C2 = try Customer(customerId: "C302", firstName: "Sadio", lastName: "Mane", email: "Sadiom@yahoo.com")
             let C3 = try Customer(customerId: "C303", firstName: "Jordan", lastName: "Henderson", email: "jorhen@gmail.IO")
             let C4 = try Customer(customerId: "C304", firstName: "James", lastName: "Milner", email: "milnerjames@gmail.com")
-
+            
             customers.append(C1)
             customers.append(C2)
             customers.append(C3)
@@ -49,7 +49,7 @@ class DataStorage {
             bills.updateValue(H1, forKey: "HYD001")
             let m1 = DateComponents(calendar: calendar, year: 2019, month: 12, day: 21)
             let md1 = calendar.date(from: m1)
-                let M1 = try Mobile(billId: "MOB101", billDate: md1!, billType: BillType.Mobile, billAmount: 100.63, modelName: "Apple X", mobileNumber: "9865473127", internetUsed: 14, minuteUsed: 351, planName: "15 GB Mega Deal")
+            let M1 = try Mobile(billId: "MOB101", billDate: md1!, billType: BillType.Mobile, billAmount: 100.63, modelName: "Apple X", mobileNumber: "9865473127", internetUsed: 14, minuteUsed: 351, planName: "15 GB Mega Deal")
             bills.updateValue(M1, forKey: "MOB101")
             C1.customerBills.updateValue(M1, forKey: "MOB101")
             
@@ -89,12 +89,12 @@ class DataStorage {
             bills.updateValue(I2, forKey: "INT002")
             C3.customerBills.updateValue(I1, forKey: "INT002")
         }catch LoginError.emailError{
-         print("Invalid Email Address")
-    
+            print("Invalid Email Address")
+            
         }
-         catch {
-          print("Unrecognised Error")
+        catch {
+            print("Unrecognised Error")
+        }
     }
- }
     let calendar = Calendar.current
 }

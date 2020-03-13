@@ -13,10 +13,10 @@ enum BillType{
 
 class Bill:IDisplay{
     
-     var billId: String
-     var billDate: Date
-     var billType: BillType?
-     var billAmount: Double
+    var billId: String
+    var billDate: Date
+    var billType: BillType?
+    var billAmount: Double
     
     init(billId: String,billDate: Date,billType: BillType, billAmount: Double) {
         self.billId = billId
@@ -26,12 +26,12 @@ class Bill:IDisplay{
     }
     func display() {
         
-//        print("         Bill ID : \(billId)")
-//        let str = billDate.formatDate(date: billDate)
-//        print("         Bill Date : \(str)")
-//        print("         Bill Type : \(billType!)")
-//        let d = "".formatCurrency(billAmount: billAmount)
-//        print("         Bill Amount : \(d)")
-//        
+        //        print("         Bill ID : \(billId)")
+        //        let str = billDate.formatDate(date: billDate)
+        //        print("         Bill Date : \(str)")
+        //        print("         Bill Type : \(billType!)")
+        //        let d = "".formatCurrency(billAmount: billAmount)
+        //        print("         Bill Amount : \(d)")
+        //        
     }
-  }
+}
