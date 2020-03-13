@@ -131,6 +131,4 @@ extension AddBillViewController: UIPickerViewDelegate, UIPickerViewDataSource{
         selectedType = types[row]
         billTypeField.text = selectedType
     }
-    
-    
 }

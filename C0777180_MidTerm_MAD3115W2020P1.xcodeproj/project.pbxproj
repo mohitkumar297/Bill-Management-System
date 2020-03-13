@@ -26,6 +26,7 @@
 		E4DB00B5241B0125001BA695 /* Hydro.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB00B4241B0125001BA695 /* Hydro.swift */; };
 		E4DB00B7241B3C6B001BA695 /* Mobile .swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB00B6241B3C6B001BA695 /* Mobile .swift */; };
 		E4DB00BB241B820E001BA695 /* AddBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB00BA241B820E001BA695 /* AddBillViewController.swift */; };
+		E4DB00BF241C520F001BA695 /* AccessUsers.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4DB00BE241C520F001BA695 /* AccessUsers.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		E4DB00B4241B0125001BA695 /* Hydro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hydro.swift; sourceTree = "<group>"; };
 		E4DB00B6241B3C6B001BA695 /* Mobile .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mobile .swift"; sourceTree = "<group>"; };
 		E4DB00BA241B820E001BA695 /* AddBillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBillViewController.swift; sourceTree = "<group>"; };
+		E4DB00BE241C520F001BA695 /* AccessUsers.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AccessUsers.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				E44DBA5B2411794A00B7CA58 /* DateExtension.swift */,
 				E44DBA4F2410DE4200B7CA58 /* StringExtension.swift */,
 				E4DB00BA241B820E001BA695 /* AddBillViewController.swift */,
+				E4DB00BE241C520F001BA695 /* AccessUsers.plist */,
 			);
 			path = C0777180_MidTerm_MAD3115W2020P1;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				E44DBA482410D34400B7CA58 /* LaunchScreen.storyboard in Resources */,
 				E44DBA452410D34400B7CA58 /* Assets.xcassets in Resources */,
 				E44DBA432410D34100B7CA58 /* Main.storyboard in Resources */,
+				E4DB00BF241C520F001BA695 /* AccessUsers.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        readPlist()
         self.navigationItem.title = "Login"
         navigationItem.backBarButtonItem = UIBarButtonItem(
             title: "Logout", style: .done, target: nil, action: nil)
@@ -42,6 +43,12 @@ class LoginViewController: UIViewController {
             passwordTextField.text = "\(pa)"
         }
         
+    }
+    
+    func readPlist(){
+        if let bundlePath = Bundle.main.path(forResource: "AccessUsers", ofType: "plist"){
+            
+        }
     }
     
     @IBAction func btnLogin(_ sender: UIButton) {
