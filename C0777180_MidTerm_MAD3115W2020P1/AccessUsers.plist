@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   AccessUsers.plist
-   C0777180_MidTerm_MAD3115W2020P1
-
-   Created by Mohit Kumar on 2020-03-13.
-   Copyright (c) 2020 Mohit Kumar. All rights reserved.
--->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-    
-    </dict>
+<dict>
+	<key>billsystem@gmail.com</key>
+	<string>billsystem123</string>
+	<key>swift@gmail.com</key>
+	<string>swift123</string>
+	<key>lambton@gmail.com</key>
+	<string>lambton123</string>
+	<key>admin@gmail.com</key>
+	<string>admin123</string>
+	<key>mohit@gmail.com</key>
+	<string>mohit123</string>
+</dict>
 </plist>
