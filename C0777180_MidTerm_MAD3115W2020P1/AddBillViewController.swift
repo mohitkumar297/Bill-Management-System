@@ -18,9 +18,11 @@ class AddBillViewController: UIViewController {
     
     @IBOutlet weak var billAmountField: UITextField!
     
+    let types = ["Mobile","Hydro","Internet"]
+    var selectedType : String?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        createBillPicker()
         
     }
     
@@ -29,7 +31,23 @@ class AddBillViewController: UIViewController {
         billPicker.delegate = self
         billTypeField.inputView = billPicker
     }
+}
 
+extension AddBillViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
-
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return types.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return types[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedType = types[row]
+        billTypeField.text = selectedType
+    }
+    
+    
 }
