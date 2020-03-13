@@ -21,6 +21,7 @@ class BillDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         self.Bills = (customerBill?.getBills())!
+        print(Bills)
         self.navigationItem.title = "Bill Details"
         let navBar = self.navigationController?.navigationBar
         navBar?.barTintColor = UIColor.gray
@@ -47,70 +48,71 @@ class BillDetailsViewController: UIViewController {
 }
 extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        3
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        3
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return (customerBill?.getBills().count)!
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let label = UILabel()
-        if section == 0{
-            label.text = "Internet"
-            label.backgroundColor = UIColor.lightGray
-            label.font = UIFont.boldSystemFont(ofSize: 20)
-        }
-        else if section == 1 {
-            label.text = "Hydro"
-            label.backgroundColor = UIColor.lightGray
-            label.font = UIFont.boldSystemFont(ofSize: 20)
-        }
-        else {
-            label.text = "Mobile"
-            label.backgroundColor = UIColor.lightGray
-            label.font = UIFont.boldSystemFont(ofSize: 20)
-        }
-        return label
-    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let label = UILabel()
+//        if section == 0{
+//            label.text = "Internet"
+//            label.backgroundColor = UIColor.lightGray
+//            label.font = UIFont.boldSystemFont(ofSize: 20)
+//        }
+//        else if section == 1 {
+//            label.text = "Hydro"
+//            label.backgroundColor = UIColor.lightGray
+//            label.font = UIFont.boldSystemFont(ofSize: 20)
+//        }
+//        else {
+//            label.text = "Mobile"
+//            label.backgroundColor = UIColor.lightGray
+//            label.font = UIFont.boldSystemFont(ofSize: 20)
+//        }
+//        return label
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "billCell", for: indexPath)
-        //cell.textLabel?.text = "\(name!.billAmount)\(name!.billId)"
-        //let name = customerBill?.bills
         let bill = Bills[indexPath.row]
+        if bill.billId.contains("INT"){
         
-        if indexPath.section == 0{
-            
-            if bill.billId.contains("INT"){
+        //if indexPath.section == 0{
                 let str = bill.billDate.formatDate()
                  cell.textLabel?.text = "Bill Id : \(bill.billId)\nBill Type : Internet\nBill Date : \(str)\nBill Amount : \(bill.billAmount)"
                  cell.textLabel?.numberOfLines = 0
 
-            }
+       // }
         }
-         if indexPath.section == 1{
- if bill.billId.contains("HYD"){
-    let str = bill.billDate.formatDate()
-     cell.textLabel?.text = "Bill Id : \(bill.billId)\nBill Type : Hydro\nBill Date : \(str)\nBill Amount : \(bill.billAmount)"
-     cell.textLabel?.numberOfLines = 0
+        if bill.billId.contains("HYD"){
+        // if indexPath.section == 1{
+                
+                    let str = bill.billDate.formatDate()
+                    cell.textLabel?.text = "Bill Id : \(bill.billId)\nBill Type : Hydro\nBill Date : \(str)\nBill Amount : \(bill.billAmount)"
+                    cell.textLabel?.numberOfLines = 0
 
-}
+
         }
-        
-        if indexPath.section == 2
-         {
-            if bill.billId.contains("MOB"){
+       // }
+        if bill.billId.contains("MOB"){
+       // if indexPath.section == 2
+         //{
+            
                 let str = bill.billDate.formatDate()
                  cell.textLabel?.text = "Bill Id : \(bill.billId)\nBill Type : Mobile\nBill Date : \(str)\nBill Amount : \(bill.billAmount)"
                  cell.textLabel?.numberOfLines = 0
 
-            }
+            
 
-                    }
+        }
+       // }
             return cell
     
-    }
+    
 
+}
 }

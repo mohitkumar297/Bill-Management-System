@@ -43,7 +43,7 @@ class DataStorage {
             let h1 = DateComponents(calendar: calendar, year: 2020, month: 01, day: 10)
             let hd1 = calendar.date(from: h1)
             let H1 = Hydro(billId: "HYD001", billDate: hd1!, billType: BillType.Hydro, billAmount: 280.90, agencyName: "Saint John Energy", unitsConsumed: 350)
-            C1.customerBills.updateValue(H1, forKey: "H")
+            C1.customerBills.updateValue(H1, forKey: "HYD001")
             bills.updateValue(H1, forKey: "HYD001")
             let m1 = DateComponents(calendar: calendar, year: 2019, month: 12, day: 21)
             let md1 = calendar.date(from: m1)
@@ -61,7 +61,7 @@ class DataStorage {
             let md2 = calendar.date(from: m2)
             let M2 =  try Mobile(billId: "MOB102", billDate: md2!, billType: BillType.Mobile, billAmount: 70.90, modelName: "Samsung S10", mobileNumber: "8990899079", internetUsed: 12, minuteUsed: 120,planName: "Big Gig Unlimited + Talk 10 GB")
             bills.updateValue(M2, forKey: "MOB102")
-            C1.customerBills.updateValue(M2, forKey: "M0B102")
+            C2.customerBills.updateValue(M2, forKey: "M0B102")
             
             let h2 = DateComponents(calendar: calendar, year: 2019, month: 05, day: 10)
             let hd2 = calendar.date(from: h2)
