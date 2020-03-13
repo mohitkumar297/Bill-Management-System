@@ -25,10 +25,6 @@ class DataStorage {
     func getAllCustomers()->[Customer]{
         return self.customers
     }
-//    func getBills(customerId: String)->[Bill]?{
-//        return self.bills[customerId]
-//    }
-    
     
     func loadCustomers(){
         do{
@@ -44,11 +40,11 @@ class DataStorage {
             let id1 = calendar.date(from: i1)
             let I1 = Internet(billId: "INT001",billDate: id1!, billType: BillType.Internet, billAmount: 55.9, providerName: "Rogers", internetUsed: 154)
             bills.updateValue(I1, forKey: "INT001")
-            C1.bills=["b1": I1]
+            C1.bills.updateValue(I1, forKey: "INT001")
             let h1 = DateComponents(calendar: calendar, year: 2020, month: 01, day: 10)
             let hd1 = calendar.date(from: h1)
             let H1 = Hydro(billId: "HYD001", billDate: hd1!, billType: BillType.Hydro, billAmount: 280.90, agencyName: "Saint John Energy", unitsConsumed: 350)
-            C1.bills = ["b2": H1]
+            C1.bills.updateValue(H1, forKey: "HYD001")
         }catch LoginError.emailError{
          print("Invalid Email Address")
     
@@ -58,11 +54,4 @@ class DataStorage {
     }
  }
     let calendar = Calendar.current
-//    let i1 = DateComponents(calendar: calendar, year: 2019, month: 10, day: 26)
-//    let id1 = calendar.date(from: i1)
-//    func loadBills(){
-//        let i1 = DateComponents(calendar: calendar, year: 2019, month: 10, day: 26)
-//        let id1 = calendar.date(from: i1)
-//        bills.updateValue(Internet(billId: <#T##String#>, billDate: <#T##Date#>, billType: <#T##BillType#>, billAmount: <#T##Double#>, providerName: <#T##String#>, internetUsed: <#T##Int#>), forKey: <#T##String#>)
-//    }
 }

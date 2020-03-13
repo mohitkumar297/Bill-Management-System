@@ -14,10 +14,16 @@ class BillDetailsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+        navigationItem.title = "Bill Details"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = 44
-        navigationItem.title = "Bill DETAILS"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        
+        
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -43,16 +49,15 @@ class BillDetailsTableViewController: UITableViewController {
         if let id = customerBill?.customerId, let fn = customerBill?.fullName, let em = customerBill?.email{
             label.text = "Customer ID : \(id)\nCustomer Name : \(fn)\nCustomer Email : \(em)"
             label.numberOfLines = 0
+            label.backgroundColor = UIColor.lightGray
         }
         return label
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tblCell", for: indexPath)
-        if let id = customerBill?.customerId, let fn = customerBill?.fullName, let em = customerBill?.email{
-            cell.textLabel?.text = "Customer ID : \(id)\nCustomer Name : \(fn)\nCustomer Email : \(em)"
-            cell.textLabel?.numberOfLines = 0
-        }
+        
+        
         return cell
     }
     
