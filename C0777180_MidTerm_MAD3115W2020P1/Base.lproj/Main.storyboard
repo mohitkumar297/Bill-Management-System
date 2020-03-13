@@ -158,15 +158,11 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="5OD-Mv-1Me" id="18k-fp-Rox"/>
-                            <outlet property="delegate" destination="5OD-Mv-1Me" id="Vqx-41-8gi"/>
-                        </connections>
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ll1-ML-dYc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2503" y="507"/>
+            <point key="canvasLocation" x="2070" y="894"/>
         </scene>
         <!--Add New Customer View Controller-->
         <scene sceneID="gNo-va-ehy">
@@ -269,6 +265,11 @@
                                     <outlet property="delegate" destination="jyz-AL-Mw0" id="2ut-dS-sUr"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01W-uM-Czw">
+                                <rect key="frame" x="348" y="41" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bill Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wm-C6-qkz">
                                 <rect key="frame" x="20" y="199" width="374" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -287,7 +288,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ah-QH-4BS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3208.6956521739135" y="77.678571428571431"/>
+            <point key="canvasLocation" x="2649" y="136"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OGn-Zo-YDq">
