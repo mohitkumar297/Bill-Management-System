@@ -33,8 +33,8 @@ class BillDetailsViewController: UIViewController {
             customerInfo.text = "Customer ID : \(id)\nCustomer Name : \(fn)\nCustomer Email : \(em)\nTotal Bill : \(formatAmount)"
             customerInfo.numberOfLines = 0
             customerInfo.font = UIFont.boldSystemFont(ofSize: 17)
-            customerInfo.backgroundColor = UIColor.blue
-            customerInfo.textColor = UIColor.green
+            customerInfo.backgroundColor = #colorLiteral(red: 0.9019607843, green: 0.2039215686, blue: 0.3843137255, alpha: 1)
+            customerInfo.textColor = #colorLiteral(red: 0.2, green: 0.2156862745, blue: 0.2705882353, alpha: 1)
             self.tblView.reloadData()
        }
      }
@@ -43,11 +43,11 @@ class BillDetailsViewController: UIViewController {
         
         if let id = customerBill?.customerId, let fn = customerBill?.fullName, let em = customerBill?.email, let am = customerBill?.calculatedBill(){
         let formatAmount = "\(am)".formatCurrency()
-        customerInfo.text = "Customer ID : \(id)\nCustomer Name : \(fn)\nCustomer Email : \(em)\nTotal Bill : \(formatAmount)"
+        customerInfo.text = "Customer ID          :    \(id)\nCustomer Name  :    \(fn)\nCustomer Email   :    \(em)\nTotal Bill                  :     \(formatAmount)"
         customerInfo.numberOfLines = 0
-        customerInfo.font = UIFont.boldSystemFont(ofSize: 17)
-        customerInfo.backgroundColor = UIColor.blue
-        customerInfo.textColor = UIColor.green
+        customerInfo.font = UIFont.boldSystemFont(ofSize: 20)
+        customerInfo.backgroundColor = #colorLiteral(red: 0.9019607843, green: 0.2039215686, blue: 0.3843137255, alpha: 1)
+        customerInfo.textColor = #colorLiteral(red: 0.9333333333, green: 0.9607843137, blue: 0.8588235294, alpha: 1)
            self.Bills = (customerBill?.getBills())!
            self.tblView.reloadData()
        }
@@ -107,8 +107,6 @@ extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
                     let formatBillAmount = "\(bill.billAmount)".formatCurrency()
                     cell.textLabel?.text = "Bill Id : \(bill.billId)\nBill Type : Internet\nBill Date : \(str)\nBill Amount : \(formatBillAmount)"
                     cell.textLabel?.numberOfLines = 0
-
-
         }
         
         if bill.billId.contains("MOB"){
@@ -121,5 +119,17 @@ extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
 
         }
             return cell
-}
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if(indexPath.row % 2 == 0){
+           cell.backgroundColor = #colorLiteral(red: 0.5137254902, green: 0.5803921569, blue: 0.631372549, alpha: 1)
+            cell.textLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            
+            
+        }
+        else {
+            cell.backgroundColor = #colorLiteral(red: 0.8196078431, green: 0.8431372549, blue: 0.8588235294, alpha: 1)
+        }
+    }
+
 }
