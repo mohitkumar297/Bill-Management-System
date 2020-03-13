@@ -10,9 +10,12 @@ import UIKit
 
 class BillDetailsTableViewController: UITableViewController {
 
+    var customerBill : Customer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
+        tableView.estimatedSectionHeaderHeight = 44
         navigationItem.title = "Bill DETAILS"
         navigationController?.navigationBar.prefersLargeTitles = true
         
@@ -26,25 +29,33 @@ class BillDetailsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 1
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
-
-    /*
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        if let id = customerBill?.customerId, let fn = customerBill?.fullName, let em = customerBill?.email{
+            label.text = "Customer ID : \(id)\nCustomer Name : \(fn)\nCustomer Email : \(em)"
+            label.numberOfLines = 0
+        }
+        return label
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tblCell", for: indexPath)
+        if let id = customerBill?.customerId, let fn = customerBill?.fullName, let em = customerBill?.email{
+            cell.textLabel?.text = "Customer ID : \(id)\nCustomer Name : \(fn)\nCustomer Email : \(em)"
+            cell.textLabel?.numberOfLines = 0
+        }
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

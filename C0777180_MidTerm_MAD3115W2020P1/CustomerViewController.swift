@@ -57,18 +57,28 @@ extension CustomerViewController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customerCell")
-        let customer = customerNames[indexPath.row]
-        cell?.textLabel?.text = customer.fullName
-        
-        return cell!
+//        let customer = customerNames[indexPath.row]
+//        cell?.textLabel?.text = customer.fullName
+//
+       return cell!
         
     }
     
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let item = customerNames[indexPath.row]
+//
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        if let VC = sb.instantiateViewController(identifier: "billDetails") as? BillDetailsViewController {
+//            self.navigationController?.pushViewController(VC, animated: true)
+//            VC.customerBill = item
+//        }
+//    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = customerNames[indexPath.row]
-        
+
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        if let VC = sb.instantiateViewController(identifier: "billDetails") as? BillDetailsViewController {
+        if let VC = sb.instantiateViewController(identifier: "billTable") as? BillDetailsTableViewController {
             self.navigationController?.pushViewController(VC, animated: true)
             VC.customerBill = item
         }

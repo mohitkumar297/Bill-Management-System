@@ -91,17 +91,17 @@
 				E44DBA442410D34400B7CA58 /* Assets.xcassets */,
 				E44DBA462410D34400B7CA58 /* LaunchScreen.storyboard */,
 				E44DBA492410D34400B7CA58 /* Info.plist */,
-				E44DBA552411786D00B7CA58 /* IDisplay.swift */,
-				E44DBA4F2410DE4200B7CA58 /* StringExtension.swift */,
-				E44DBA57241178B800B7CA58 /* Customer.swift */,
-				E44DBA592411790D00B7CA58 /* Bill.swift */,
-				E44DBA5B2411794A00B7CA58 /* DateExtension.swift */,
 				E44DBA8324121DE100B7CA58 /* DataStorage.swift */,
 				E44DBA852412C69600B7CA58 /* AddNewCustomerViewController.swift */,
 				E44DBAAB24132BF500B7CA58 /* BillDetailsViewController.swift */,
+				E44DBA552411786D00B7CA58 /* IDisplay.swift */,
+				E44DBA57241178B800B7CA58 /* Customer.swift */,
+				E44DBA592411790D00B7CA58 /* Bill.swift */,
 				E44DBAAF2418D33600B7CA58 /* Internet.swift */,
 				E4DB00B4241B0125001BA695 /* Hydro.swift */,
 				E4DB00B6241B3C6B001BA695 /* Mobile .swift */,
+				E44DBA5B2411794A00B7CA58 /* DateExtension.swift */,
+				E44DBA4F2410DE4200B7CA58 /* StringExtension.swift */,
 			);
 			path = C0777180_MidTerm_MAD3115W2020P1;
 			sourceTree = "<group>";
