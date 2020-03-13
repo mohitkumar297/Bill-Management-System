@@ -80,17 +80,24 @@ extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
         
         if indexPath.section == 0{
             
-            let exists = customerBill?.bills["I"] != nil
-            if exists{
-                let v = customerBill?.bills["I"]
-                let str = v?.billDate.formatDate()
-                cell.textLabel?.text = "Bill Id : \(v!.billId)\nBill Type : Internet\nBill Date : \(str!)\nBill Amount : \(v!.billAmount)"
-                cell.textLabel?.numberOfLines = 0
-        }
-            else {
-                cell.textLabel?.text = "No bill"
+//            let exists = customerBill?.bills["I"] != nil
+//            if exists{
+//                let v = customerBill?.bills["I"]
+//                let str = v?.billDate.formatDate()
+//                cell.textLabel?.text = "Bill Id : \(v!.billId)\nBill Type : Internet\nBill Date : \(str!)\nBill Amount : \(v!.billAmount)"
+//                cell.textLabel?.numberOfLines = 0
+//        }
+//            else {
+//                cell.textLabel?.text = "No bill"
+//            }
+            var check = false
+            let arr = (customerBill?.bills.values)!
+            for a in arr{
+                if a.billId.contains("INT"){
+                    check = true
+                }
             }
-    }
+        }
          if indexPath.section == 1{
              let exists = customerBill?.bills["H"] != nil
                        if exists{
