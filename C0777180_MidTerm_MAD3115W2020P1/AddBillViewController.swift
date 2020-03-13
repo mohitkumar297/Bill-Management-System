@@ -44,15 +44,15 @@ class AddBillViewController: UIViewController {
                 }
                 
                     else{
-//                    if df == "Internet"{
-//                        selectedCustomer?.bills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Internet, billAmount: Double(baf)!), forKey: "I")
-//                    }
-//                    else if df == "Hydro"{
-//                        selectedCustomer?.bills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Hydro, billAmount: Double(baf)!), forKey: "H")
-//                    }
-//                 else if df == "Mobile"{
-//                     selectedCustomer?.bills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Mobile, billAmount: Double(baf)!), forKey: "M")
-//                 }
+                    if id.contains("INT"){
+                        selectedCustomer?.customerBills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Internet, billAmount: Double(baf)!), forKey: "\(id)")
+                    }
+                    else if df == "Hydro"{
+                        selectedCustomer?.customerBills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Hydro, billAmount: Double(baf)!), forKey: "\(id)")
+                    }
+                 else if df == "Mobile"{
+                     selectedCustomer?.customerBills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Mobile, billAmount: Double(baf)!), forKey: "\(id)")
+                 }
                 
         
         

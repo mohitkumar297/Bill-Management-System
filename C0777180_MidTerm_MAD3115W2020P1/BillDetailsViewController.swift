@@ -21,7 +21,6 @@ class BillDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         self.Bills = (customerBill?.getBills())!
-        print(Bills)
         self.navigationItem.title = "Bill Details"
         let navBar = self.navigationController?.navigationBar
         navBar?.barTintColor = UIColor.gray
@@ -34,9 +33,13 @@ class BillDetailsViewController: UIViewController {
             customerInfo.font = UIFont.boldSystemFont(ofSize: 17)
             customerInfo.backgroundColor = UIColor.blue
             customerInfo.textColor = UIColor.green
-            
+            self.tblView.reloadData()
        }
      }
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+           self.tblView.reloadData()
+       }
     @objc func addTapped(){
         let choice = customerBill!
         let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -48,9 +51,9 @@ class BillDetailsViewController: UIViewController {
 }
 extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        3
-//    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (customerBill?.getBills().count)!

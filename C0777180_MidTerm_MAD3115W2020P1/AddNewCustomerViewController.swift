@@ -49,7 +49,7 @@ class AddNewCustomerViewController: UIViewController {
                 do{
                     DataStorage.getInstance().addCustomer(customer: try Customer(customerId: "\(id)", firstName: "\(fn)", lastName: "\(ln)", email: "\(em)"))
              
-            
+            self.navigationController?.popViewController(animated: true)
     }catch LoginError.emailError{
         let alertController = UIAlertController(title: "ERROR", message:
             "Invalid Email", preferredStyle: .alert)
@@ -63,12 +63,7 @@ class AddNewCustomerViewController: UIViewController {
     
    }
  }
-        
 }
-    @IBAction func showBack(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
 }
 
 

@@ -33,7 +33,7 @@ extension String{
     func minUsed(minutesUsed: Int)->String{
         return "         Minutes Usage : \(minutesUsed) minutes "
     }
-    func toDate(withFormat format: String = "MMM dd, yyyy") -> Date {
+    func toDate(withFormat format: String = "EEEE, dd MMMM, yyyy") -> Date {
       let dateFormatter = DateFormatter()
       dateFormatter.dateFormat = format
       guard let date = dateFormatter.date(from: self) else {
