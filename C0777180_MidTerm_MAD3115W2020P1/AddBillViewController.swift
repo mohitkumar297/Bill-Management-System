@@ -42,7 +42,13 @@ class AddBillViewController: UIViewController {
 
                     self.present(alertController, animated: true, completion: nil)
                 }
-                
+                else if btf == "Mobile" && !id.hasPrefix("MOB"){
+                    let alertController = UIAlertController(title: "ERROR", message:
+                        "ID should start with MOB", preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+                    self.present(alertController, animated: true, completion: nil)
+                }
                     else{
                     if id.contains("INT"){
                         selectedCustomer?.customerBills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Internet, billAmount: Double(baf)!), forKey: "\(id)")
@@ -53,8 +59,7 @@ class AddBillViewController: UIViewController {
                     else if id.contains("MOB"){
                      selectedCustomer?.customerBills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Mobile, billAmount: Double(baf)!), forKey: "\(id)")
                  }
-                
-        
+
         
     }
         }
