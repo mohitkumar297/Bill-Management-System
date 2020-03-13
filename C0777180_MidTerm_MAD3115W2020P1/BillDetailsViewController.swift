@@ -25,8 +25,8 @@ class BillDetailsViewController: UIViewController {
         navBar?.isTranslucent = true
         navigationItem.leftBarButtonItem?.tintColor = UIColor.white
        
-        if let id = customerBill?.customerId, let fn = customerBill?.fullName, let em = customerBill?.email{
-            customerInfo.text = "Customer ID : \(id)\nCustomer Name : \(fn)\nCustomer Email : \(em)"
+        if let id = customerBill?.customerId, let fn = customerBill?.fullName, let em = customerBill?.email, let am = customerBill?.calculatedBill(){
+            customerInfo.text = "Customer ID : \(id)\nCustomer Name : \(fn)\nCustomer Email : \(em)\nTotal Bill : \(am)"
             customerInfo.numberOfLines = 0
           
 //            if let abc = customerBill?.bills{
@@ -73,40 +73,37 @@ extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
         //let name = customerBill?.bills
         
         if indexPath.section == 0{
-            var check = false
-            for (_,v) in customerBill!.bills{
-                if v.billId.contains("INT"){
-                    check = true
-                    cell.textLabel?.text = "\(v.billId)\(v.billDate)"
-            }
-//                if check == true{
-//                    cell.textLabel?.text = "\(v.billId)\(v.billDate)"
-//                }
-                else{
-                    cell.textLabel?.text = "no bill"
-                }
+            
+            let exists = customerBill?.bills["I"] != nil
+            if exists{
+                let v = customerBill?.bills["I"]
+                cell.textLabel?.text = "\(v!.billId)\(v!.billAmount)"
         }
+            else {
+                cell.textLabel?.text = "No bill"
+            }
     }
          if indexPath.section == 1{
-            for (k,v) in customerBill!.bills{
-                if k.starts(with: "HYD"){
-                cell.textLabel?.text = "\(v.billId)\(v.billDate)"
-                }
-                else {
-                    cell.textLabel?.text = "No bill "
-                }
+             let exists = customerBill?.bills["H"] != nil
+                       if exists{
+                           let v = customerBill?.bills["H"]
+                        cell.textLabel?.text = "\(v!.billId)\(v!.billAmount)\(v!.billDate)"
+                   }
+            else {
+                cell.textLabel?.text = "No bill"
             }
         }
+        
         if indexPath.section == 2
-         {for (k,v) in customerBill!.bills{
-            if k.contains("M"){
-            cell.textLabel?.text = "\(v.billId)\(v.billDate)"
+         {
+            let exists = customerBill?.bills["M"] != nil
+                if exists{
+                    let v = customerBill?.bills["M"]
+                 cell.textLabel?.text = "\(v!.billId)\(v!.billAmount)\(v!.billDate)"
             }
             else {
-                cell.textLabel?.text = "No bill "
+                cell.textLabel?.text = "No bill"
             }
-            }
-            
         }
             return cell
     
