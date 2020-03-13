@@ -27,23 +27,15 @@ class BillDetailsViewController: UIViewController {
         navBar?.isTranslucent = true
         navigationItem.leftBarButtonItem?.tintColor = UIColor.white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Bill", style: .plain, target: self, action: #selector(addTapped))
-        self.tblView.reloadData()
-        if let id = customerBill?.customerId, let fn = customerBill?.fullName, let em = customerBill?.email, let am = customerBill?.totalBill{
-            let formatAmount = "\(am)".formatCurrency()
-            customerInfo.text = "Customer ID : \(id)\nCustomer Name : \(fn)\nCustomer Email : \(em)\nTotal Bill :   \(formatAmount)"
-            customerInfo.numberOfLines = 0
-            customerInfo.font = UIFont.boldSystemFont(ofSize: 17)
-            customerInfo.backgroundColor = #colorLiteral(red: 0.9019607843, green: 0.2039215686, blue: 0.3843137255, alpha: 1)
-            customerInfo.textColor = #colorLiteral(red: 0.2, green: 0.2156862745, blue: 0.2705882353, alpha: 1)
-            self.tblView.reloadData()
+
        }
-     }
+     
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
         
         if let id = customerBill?.customerId, let fn = customerBill?.fullName, let em = customerBill?.email, let am = customerBill?.calculatedBill(){
         let formatAmount = "\(am)".formatCurrency()
-        customerInfo.text = "Customer ID          :    \(id)\nCustomer Name  :    \(fn)\nCustomer Email   :    \(em)\nTotal Bill                   :     \(formatAmount)"
+        customerInfo.text = "  Customer ID          :    \(id)\n  Customer Name  :    \(fn)\n  Customer Email   :    \(em)\n  Total Bill                   :     \(formatAmount)"
         customerInfo.numberOfLines = 0
         customerInfo.font = UIFont.boldSystemFont(ofSize: 20)
         customerInfo.backgroundColor = #colorLiteral(red: 0.9019607843, green: 0.2039215686, blue: 0.3843137255, alpha: 1)

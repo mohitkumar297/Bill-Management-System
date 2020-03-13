@@ -69,7 +69,7 @@ class DataStorage {
             bills.updateValue(H2, forKey: "HYD002")
             C2.customerBills.updateValue(H2, forKey: "HYD002")
             
-            let h3 = DateComponents(calendar: calendar, year: 2020, month: 02, day: 05)
+            let h3 = DateComponents(calendar: calendar, year: 2020, month: 02, day: 06)
             let hd3 = calendar.date(from: h3)
             let H3 = Hydro(billId: "HYD003", billDate: hd3!, billType: BillType.Hydro, billAmount: 150.68, agencyName: "Alectra Utilities", unitsConsumed: 225)
             bills.updateValue(H3, forKey: "HYD003")

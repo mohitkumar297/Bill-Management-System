@@ -27,9 +27,6 @@ class AddBillViewController: UIViewController {
         createBillPicker()
         createDatePicker()
         createToolBar()
-        
-        
-        
     }
     
     @IBAction func saveBtn(_ sender: UIButton) {
@@ -49,6 +46,20 @@ class AddBillViewController: UIViewController {
 
                     self.present(alertController, animated: true, completion: nil)
                 }
+                    else if btf == "Hydro" && !id.hasPrefix("HYD"){
+                        let alertController = UIAlertController(title: "ERROR", message:
+                            "ID should start with HYD", preferredStyle: .alert)
+                        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+                        self.present(alertController, animated: true, completion: nil)
+                    }
+                    else if btf == "Internet" && !id.hasPrefix("INT"){
+                        let alertController = UIAlertController(title: "ERROR", message:
+                            "ID should start with INT", preferredStyle: .alert)
+                        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+                        self.present(alertController, animated: true, completion: nil)
+                    }
                     else{
                     if id.contains("INT"){
                         selectedCustomer?.customerBills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Internet, billAmount: Double(baf)!), forKey: "\(id)")
@@ -60,9 +71,8 @@ class AddBillViewController: UIViewController {
                      selectedCustomer?.customerBills.updateValue(Bill(billId: "\(id)", billDate: df.toDate(), billType: BillType.Mobile, billAmount: Double(baf)!), forKey: "\(id)")
                  }
 
-        
     }
-        }
+    }
          self.navigationController?.popViewController(animated: true)
         
     }
