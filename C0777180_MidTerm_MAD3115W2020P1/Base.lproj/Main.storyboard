@@ -229,9 +229,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZmU-nl-MYM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2563.768115942029" y="-877.23214285714278"/>
+            <point key="canvasLocation" x="2562" y="-509"/>
         </scene>
-        <!--Bill Details View Controller-->
+        <!--Bill Details-->
         <scene sceneID="pR8-VR-5Me">
             <objects>
                 <viewController storyboardIdentifier="billDetails" automaticallyAdjustsScrollViewInsets="NO" id="jyz-AL-Mw0" customClass="BillDetailsViewController" customModule="C0777180_MidTerm_MAD3115W2020P1" customModuleProvider="target" sceneMemberID="viewController">
@@ -239,6 +239,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bill Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wm-C6-qkz">
+                                <rect key="frame" x="20" y="199" width="374" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7N-Hs-z0P">
                                 <rect key="frame" x="20" y="79" width="374" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -265,22 +271,13 @@
                                     <outlet property="delegate" destination="jyz-AL-Mw0" id="2ut-dS-sUr"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01W-uM-Czw">
-                                <rect key="frame" x="348" y="41" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bill Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wm-C6-qkz">
-                                <rect key="frame" x="20" y="199" width="374" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="GFN-Q4-Ltj"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Jqv-Ev-Iju"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Bill Details" id="Jqv-Ev-Iju"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="customerInfo" destination="g7N-Hs-z0P" id="Gy2-cN-gf7"/>
                         <outlet property="tblView" destination="5cC-ne-1IC" id="AAe-8v-LuR"/>
@@ -288,7 +285,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ah-QH-4BS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2649" y="136"/>
+            <point key="canvasLocation" x="2649.275362318841" y="135.9375"/>
+        </scene>
+        <!--Add Bill View Controller-->
+        <scene sceneID="S9v-Hm-Afh">
+            <objects>
+                <viewController storyboardIdentifier="addBillCell" id="U0U-fb-7eq" customClass="AddBillViewController" customModule="C0777180_MidTerm_MAD3115W2020P1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ks9-5b-Bgq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="lPT-zN-w89"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zQQ-U9-4lW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3669" y="140"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OGn-Zo-YDq">

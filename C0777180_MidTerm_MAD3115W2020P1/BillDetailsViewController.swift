@@ -24,7 +24,7 @@ class BillDetailsViewController: UIViewController {
         navBar?.barTintColor = UIColor.gray
         navBar?.isTranslucent = true
         navigationItem.leftBarButtonItem?.tintColor = UIColor.white
-       
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Bill", style: .plain, target: self, action: #selector(addTapped))
         if let id = customerBill?.customerId, let fn = customerBill?.fullName, let em = customerBill?.email, let am = customerBill?.calculatedBill(){
             customerInfo.text = "Customer ID : \(id)\nCustomer Name : \(fn)\nCustomer Email : \(em)\nTotal Bill : \(am)"
             customerInfo.numberOfLines = 0
@@ -34,8 +34,13 @@ class BillDetailsViewController: UIViewController {
             
        }
      }
+    @objc func addTapped(){
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        if let VC = sb.instantiateViewController(identifier: "addBillCell") as? AddBillViewController {
+            self.navigationController?.pushViewController(VC, animated: true)
+    }
 }
-
+}
 extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
