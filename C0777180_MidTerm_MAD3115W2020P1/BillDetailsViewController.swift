@@ -19,6 +19,8 @@ class BillDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.Bills = (customerBill?.getBills())!
         self.navigationItem.title = "Bill Details"
         let navBar = self.navigationController?.navigationBar
         navBar?.barTintColor = UIColor.gray
@@ -77,40 +79,38 @@ extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "billCell", for: indexPath)
         //cell.textLabel?.text = "\(name!.billAmount)\(name!.billId)"
         //let name = customerBill?.bills
-        let data = DataStorage.getInstance().getAllBills()
+        let bill = Bills[indexPath.row]
+        
         if indexPath.section == 0{
             
-            for(_,v) in data{
-                if v.billId.hasSuffix("H"){
-                    let str = v.billDate.formatDate()
-                        cell.textLabel?.text = "Bill Id : \(v.billId)\nBill Type : \(BillType.self)\nBill Date : \(str)\nBill Amount : \(v.billAmount)"
-                                    cell.textLabel?.numberOfLines = 0
-                }
+            if bill.billId.contains("INT"){
+                let str = bill.billDate.formatDate()
+                 cell.textLabel?.text = "Bill Id : \(bill.billId)\nBill Type : Internet\nBill Date : \(str)\nBill Amount : \(bill.billAmount)"
+                 cell.textLabel?.numberOfLines = 0
+
             }
-  
-            }
-        
+        }
          if indexPath.section == 1{
-             for(_,v) in data{
-                 if v.billId.hasSuffix("H"){
-                     let str = v.billDate.formatDate()
-                                     cell.textLabel?.text = "Bill Id : \(v.billId)\nBill Type : \(BillType.self)\nBill Date : \(str)\nBill Amount : \(v.billAmount)"
-                                     cell.textLabel?.numberOfLines = 0
-                 }
-             }
+ if bill.billId.contains("HYD"){
+    let str = bill.billDate.formatDate()
+     cell.textLabel?.text = "Bill Id : \(bill.billId)\nBill Type : Hydro\nBill Date : \(str)\nBill Amount : \(bill.billAmount)"
+     cell.textLabel?.numberOfLines = 0
+
+}
         }
         
         if indexPath.section == 2
          {
-            for(_,v) in data{
-                if v.billId.hasPrefix("M"){
-                    let str = v.billDate.formatDate()
-                                    cell.textLabel?.text = "Bill Id : \(v.billId)\nBill Type : \(BillType.self)\nBill Date : \(str)\nBill Amount : \(v.billAmount)"
-                                    cell.textLabel?.numberOfLines = 0
-                }
+            if bill.billId.contains("MOB"){
+                let str = bill.billDate.formatDate()
+                 cell.textLabel?.text = "Bill Id : \(bill.billId)\nBill Type : Mobile\nBill Date : \(str)\nBill Amount : \(bill.billAmount)"
+                 cell.textLabel?.numberOfLines = 0
+
             }
-        }
+
+                    }
             return cell
     
     }
+
 }

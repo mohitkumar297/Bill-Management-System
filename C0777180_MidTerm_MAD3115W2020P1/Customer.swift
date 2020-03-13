@@ -20,7 +20,7 @@ class Customer: IDisplay {
         return "\(firstName) \(lastName)"
     }
     var email: String
-    lazy var bills : [String:Bill]=[:]
+    lazy var customerBills : [String:Bill]=[:]
 
     lazy var totalBill: Double = calculatedBill()
     
@@ -36,9 +36,17 @@ class Customer: IDisplay {
         self.email = email
 
     }
+    func getBills() -> [Bill]{
+        var bills = [Bill]()
+        for i in customerBills{
+            bills.append(i.value)
+        }
+        return bills
+    }
+
     func calculatedBill() -> Double{
         var t = 0.0
-        for(_,v) in bills{
+        for(_,v) in customerBills{
             t = t + v.billAmount
         }
         return t
