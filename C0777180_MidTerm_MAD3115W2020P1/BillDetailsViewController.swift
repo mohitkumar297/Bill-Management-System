@@ -58,14 +58,17 @@ extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
         if section == 0{
             label.text = "Internet"
             label.backgroundColor = UIColor.lightGray
+            label.font = UIFont.boldSystemFont(ofSize: 20)
         }
         else if section == 1 {
             label.text = "Hydro"
             label.backgroundColor = UIColor.lightGray
+            label.font = UIFont.boldSystemFont(ofSize: 20)
         }
         else {
             label.text = "Mobile"
             label.backgroundColor = UIColor.lightGray
+            label.font = UIFont.boldSystemFont(ofSize: 20)
         }
         return label
     }
