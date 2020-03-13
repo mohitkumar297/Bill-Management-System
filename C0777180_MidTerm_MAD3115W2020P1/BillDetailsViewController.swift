@@ -40,8 +40,8 @@ class BillDetailsViewController: UIViewController {
         customerInfo.font = UIFont.boldSystemFont(ofSize: 20)
         customerInfo.backgroundColor = #colorLiteral(red: 0.9019607843, green: 0.2039215686, blue: 0.3843137255, alpha: 1)
         customerInfo.textColor = #colorLiteral(red: 0.9333333333, green: 0.9607843137, blue: 0.8588235294, alpha: 1)
-           self.Bills = (customerBill?.getBills())!
-           self.tblView.reloadData()
+        self.Bills = (customerBill?.getBills())!
+        self.tblView.reloadData()
        }
     }
     
@@ -63,27 +63,7 @@ extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (customerBill?.getBills().count)!
     }
-    
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let label = UILabel()
-//        if section == 0{
-//            label.text = "Internet"
-//            label.backgroundColor = UIColor.lightGray
-//            label.font = UIFont.boldSystemFont(ofSize: 20)
-//        }
-//        else if section == 1 {
-//            label.text = "Hydro"
-//            label.backgroundColor = UIColor.lightGray
-//            label.font = UIFont.boldSystemFont(ofSize: 20)
-//        }
-//        else {
-//            label.text = "Mobile"
-//            label.backgroundColor = UIColor.lightGray
-//            label.font = UIFont.boldSystemFont(ofSize: 20)
-//        }
-//        return label
-//    }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "billCell", for: indexPath)
         let bill = Bills[indexPath.row]

@@ -35,10 +35,12 @@ class DataStorage {
             let C1 = try Customer(customerId: "C301", firstName: "Steven", lastName: "Gerrard", email: "sgerrard@gmail.com")
             let C2 = try Customer(customerId: "C302", firstName: "Sadio", lastName: "Mane", email: "Sadiom@yahoo.com")
             let C3 = try Customer(customerId: "C303", firstName: "Jordan", lastName: "Henderson", email: "jorhen@gmail.IO")
+            let C4 = try Customer(customerId: "C304", firstName: "James", lastName: "Milner", email: "milnerjames@gmail.com")
+
             customers.append(C1)
             customers.append(C2)
             customers.append(C3)
-            
+            customers.append(C4)
             
             let h1 = DateComponents(calendar: calendar, year: 2020, month: 01, day: 10)
             let hd1 = calendar.date(from: h1)
@@ -74,6 +76,12 @@ class DataStorage {
             let H3 = Hydro(billId: "HYD003", billDate: hd3!, billType: BillType.Hydro, billAmount: 150.68, agencyName: "Alectra Utilities", unitsConsumed: 225)
             bills.updateValue(H3, forKey: "HYD003")
             C3.customerBills.updateValue(H3, forKey: "HYD003")
+            
+            let h4 = DateComponents(calendar: calendar, year: 2019, month: 04, day: 02)
+            let hd4 = calendar.date(from: h4)
+            let H4 = Hydro(billId: "HYD004", billDate: hd4!, billType: BillType.Hydro, billAmount: 250.48, agencyName: "Signal Utilities", unitsConsumed: 325)
+            bills.updateValue(H3, forKey: "HYD004")
+            C4.customerBills.updateValue(H4, forKey: "HYD004")
         }catch LoginError.emailError{
          print("Invalid Email Address")
     
