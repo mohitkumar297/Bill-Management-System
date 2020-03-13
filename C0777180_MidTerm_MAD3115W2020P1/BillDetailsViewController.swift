@@ -77,7 +77,8 @@ extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
             let exists = customerBill?.bills["I"] != nil
             if exists{
                 let v = customerBill?.bills["I"]
-                cell.textLabel?.text = "Bill Id : \(v!.billId)\nBill Type : Internet\nBill Date : \(v!.billDate)\nBill Amount : \(v!.billAmount)"
+                let str = v?.billDate.formatDate()
+                cell.textLabel?.text = "Bill Id : \(v!.billId)\nBill Type : Internet\nBill Date : \(str!)\nBill Amount : \(v!.billAmount)"
                 cell.textLabel?.numberOfLines = 0
         }
             else {
@@ -88,7 +89,9 @@ extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
              let exists = customerBill?.bills["H"] != nil
                        if exists{
                            let v = customerBill?.bills["H"]
-                        cell.textLabel?.text = "\(v!.billId)\(v!.billAmount)\(v!.billDate)"
+                        let str = v?.billDate.formatDate()
+                        cell.textLabel?.text = "Bill Id : \(v!.billId)\nBill Type : Internet\nBill Date : \(str!)\nBill Amount : \(v!.billAmount)"
+                        cell.textLabel?.numberOfLines = 0
                    }
             else {
                 cell.textLabel?.text = "No bill"
@@ -100,7 +103,9 @@ extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
             let exists = customerBill?.bills["M"] != nil
                 if exists{
                     let v = customerBill?.bills["M"]
-                 cell.textLabel?.text = "\(v!.billId)\(v!.billAmount)\(v!.billDate)"
+                 let str = v?.billDate.formatDate()
+                 cell.textLabel?.text = "Bill Id : \(v!.billId)\nBill Type : Internet\nBill Date : \(str!)\nBill Amount : \(v!.billAmount)"
+                 cell.textLabel?.numberOfLines = 0
             }
             else {
                 cell.textLabel?.text = "No bill"

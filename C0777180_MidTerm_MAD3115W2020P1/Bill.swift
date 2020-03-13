@@ -26,12 +26,12 @@ class Bill:IDisplay{
     }
     func display() {
         
-        print("         Bill ID : \(billId)")
-        let str = billDate.formatDate(date: billDate)
-        print("         Bill Date : \(str)")
-        print("         Bill Type : \(billType!)")
-        let d = "".formatCurrency(billAmount: billAmount)
-        print("         Bill Amount : \(d)")
-        
+//        print("         Bill ID : \(billId)")
+//        let str = billDate.formatDate(date: billDate)
+//        print("         Bill Date : \(str)")
+//        print("         Bill Type : \(billType!)")
+//        let d = "".formatCurrency(billAmount: billAmount)
+//        print("         Bill Amount : \(d)")
+//        
     }
   }
