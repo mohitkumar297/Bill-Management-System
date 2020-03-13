@@ -10,10 +10,18 @@ import UIKit
 
 class AddBillViewController: UIViewController {
 
+    @IBOutlet weak var idField: UITextField!
+    
+    @IBOutlet weak var dateField: UITextField!
+    
+    @IBOutlet weak var billTypeField: UITextField!
+    
+    @IBOutlet weak var billAmountField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
 
