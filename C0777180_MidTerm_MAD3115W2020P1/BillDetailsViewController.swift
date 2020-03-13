@@ -96,32 +96,59 @@ extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
                 if a.billId.contains("INT"){
                     check = true
                 }
+                if check {
+                    for v in arr{
+                        let str = v.billDate.formatDate()
+                        cell.textLabel?.text = "Bill Id : \(v.billId)\nBill Type : Internet\nBill Date : \(str)\nBill Amount : \(v.billAmount)"
+                        cell.textLabel?.numberOfLines = 0
+                    }
+                    
+                }
+                else {
+                                cell.textLabel?.text = "No bill"
+                          }
             }
         }
          if indexPath.section == 1{
-             let exists = customerBill?.bills["H"] != nil
-                       if exists{
-                           let v = customerBill?.bills["H"]
-                        let str = v?.billDate.formatDate()
-                        cell.textLabel?.text = "Bill Id : \(v!.billId)\nBill Type : Hydro\nBill Date : \(str!)\nBill Amount : \(v!.billAmount)"
-                        cell.textLabel?.numberOfLines = 0
-                   }
-            else {
-                cell.textLabel?.text = "No bill"
-            }
+             var check1 = false
+             let arr = (customerBill?.bills.values)!
+             for a in arr{
+                 if a.billId.contains("HYD"){
+                     check1 = true
+                 }
+                 if check1 {
+                     for v in arr{
+                         let str = v.billDate.formatDate()
+                         cell.textLabel?.text = "Bill Id : \(v.billId)\nBill Type : Hydro\nBill Date : \(str)\nBill Amount : \(v.billAmount)"
+                         cell.textLabel?.numberOfLines = 0
+                     }
+                     
+                 }
+                 else {
+                                 cell.textLabel?.text = "No bill"
+                           }
+             }
         }
         
         if indexPath.section == 2
          {
-            let exists = customerBill?.bills["M"] != nil
-                if exists{
-                    let v = customerBill?.bills["M"]
-                 let str = v?.billDate.formatDate()
-                 cell.textLabel?.text = "Bill Id : \(v!.billId)\nBill Type : Mobile\nBill Date : \(str!)\nBill Amount : \(v!.billAmount)"
-                 cell.textLabel?.numberOfLines = 0
-            }
-            else {
-                cell.textLabel?.text = "No bill"
+            var check2 = false
+            let arr = (customerBill?.bills.values)!
+            for a in arr{
+                if a.billId.contains("MOB"){
+                    check2 = true
+                }
+                if check2 {
+                    for v in arr{
+                        let str = v.billDate.formatDate()
+                        cell.textLabel?.text = "Bill Id : \(v.billId)\nBill Type : Mobile\nBill Date : \(str)\nBill Amount : \(v.billAmount)"
+                        cell.textLabel?.numberOfLines = 0
+                    }
+                    
+                }
+                else {
+                                cell.textLabel?.text = "No bill"
+                          }
             }
         }
             return cell

@@ -58,7 +58,7 @@ class DataStorage {
             let md2 = calendar.date(from: m2)
             let M2 =  try Mobile(billId: "MOB102", billDate: md2!, billType: BillType.Mobile, billAmount: 70.90, modelName: "Samsung S10", mobileNumber: "8990899079", internetUsed: 12, minuteUsed: 120,planName: "Big Gig Unlimited + Talk 10 GB")
             bills.updateValue(M2, forKey: "MOB102")
-            C2.bills.updateValue(M2, forKey: "M")
+            C1.bills.updateValue(M2, forKey: "M")
             
             let h2 = DateComponents(calendar: calendar, year: 2019, month: 05, day: 10)
             let hd2 = calendar.date(from: h2)
