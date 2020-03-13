@@ -36,8 +36,8 @@ class AddBillViewController: UIViewController {
     }
     
     @objc func dateChanged(datePicker: UIDatePicker){
-        let 
-        datePicker.date
+        
+        dateField.text = datePicker.date.formatDate()
     }
     func createBillPicker(){
         let billPicker = UIPickerView()
@@ -55,6 +55,7 @@ class AddBillViewController: UIViewController {
         toolBar.setItems([cancelButton,spaceButton,doneButton], animated: true)
         toolBar.isUserInteractionEnabled = true
         billTypeField.inputAccessoryView = toolBar
+        dateField.inputAccessoryView = toolBar
         
     }
     @objc func dismissKeyboard(){
@@ -62,6 +63,7 @@ class AddBillViewController: UIViewController {
     }
     @objc func cancelClick(){
         billTypeField.resignFirstResponder()
+        dateField.resignFirstResponder()
     }
 }
 
