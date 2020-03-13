@@ -29,21 +29,12 @@ class BillDetailsViewController: UIViewController {
             customerInfo.numberOfLines = 0
           
             if let abc = customerBill?.bills{
-//                for(_,v) in abc{
-//                    for a in v.billType{
-//                        billInfo.text="\(a.)"
-//                    }
-//                }
-                
                 for(_,v) in abc{
-                    
                     if v.billId.contains("INT"){
-//                        if let bid = v.billId, let bname = v.billType, let btype = v.billType, let bdate = v.billDate, let pr = v
-                        billInfo.text = "\(v)"
-                    }
-            }
-        
-    }
-  }
-}
+                    billInfo.text = "Bill Id : \(v.billId)\nBill Amount : \(v.billAmount)"
+                }
+             }
+          }
+       }
+     }
 }
