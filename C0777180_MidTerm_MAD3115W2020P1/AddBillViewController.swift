@@ -30,6 +30,7 @@ class AddBillViewController: UIViewController {
         let billPicker = UIPickerView()
         billPicker.delegate = self
         billTypeField.inputView = billPicker
+        billPicker.backgroundColor = .white
     }
     func createToolBar(){
         let toolBar = UIToolbar()
@@ -38,7 +39,7 @@ class AddBillViewController: UIViewController {
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(AddBillViewController.dismissKeyboard))
        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(AddBillViewController.cancelClick))
-        toolBar.setItems([cancelButton,doneButton], animated: true)
+        toolBar.setItems([cancelButton,spaceButton,doneButton], animated: true)
         toolBar.isUserInteractionEnabled = true
         billTypeField.inputAccessoryView = toolBar
         
