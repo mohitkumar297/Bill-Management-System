@@ -14,8 +14,8 @@ enum LoginError: Error{
 
 class LoginViewController: UIViewController {
     
-    let email = "mohit@gmail.com"
-    let password = "mohit123"
+    let email = String()
+    let password = String()
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -26,7 +26,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        readPlist()
         self.navigationItem.title = "Login"
         navigationItem.backBarButtonItem = UIBarButtonItem(
             title: "Logout", style: .done, target: nil, action: nil)
@@ -44,18 +43,23 @@ class LoginViewController: UIViewController {
         }
         
     }
-    
-    func readPlist(){
-        if let bundlePath = Bundle.main.path(forResource: "AccessUsers", ofType: "plist"){
-            
-        }
-    }
+
     
     @IBAction func btnLogin(_ sender: UIButton) {
-        
+        guard let access = getPlist(withName: "AccessUsers") else{
+        print("no no")
+            return
+        }
+
         do{
             try login()
-            if emailTextField.text == email && passwordTextField.text == password{
+            var canEnter = false
+            for (k,v) in access{
+                    if emailTextField.text! == k && passwordTextField.text! == v{
+                    canEnter = true
+                }
+            }
+            if canEnter{
                 if switchSave.isOn == true {
                     UserDefaults.standard.set(emailTextField.text!, forKey: "email")
                     UserDefaults.standard.set(passwordTextField.text!, forKey: "password")
@@ -99,6 +103,16 @@ class LoginViewController: UIViewController {
         catch {
             print("Unrecognized error")
         }
+    }
+    func getPlist(withName name: String) -> [String: String]?
+    {
+        if  let path = Bundle.main.path(forResource: name, ofType: "plist"),
+            let xml = FileManager.default.contents(atPath: path)
+        {
+            return (try? PropertyListSerialization.propertyList(from: xml, options: .mutableContainersAndLeaves, format: nil)) as? [String: String]
+        }
+
+        return nil
     }
     
     func login() throws{
