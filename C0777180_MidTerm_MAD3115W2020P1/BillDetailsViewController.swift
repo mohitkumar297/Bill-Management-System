@@ -77,7 +77,8 @@ extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
             let exists = customerBill?.bills["I"] != nil
             if exists{
                 let v = customerBill?.bills["I"]
-                cell.textLabel?.text = "\(v!.billId)\(v!.billAmount)"
+                cell.textLabel?.text = "Bill Id : \(v!.billId)\nBill Type : Internet\nBill Date : \(v!.billDate)\nBill Amount : \(v!.billAmount)"
+                cell.textLabel?.numberOfLines = 0
         }
             else {
                 cell.textLabel?.text = "No bill"
