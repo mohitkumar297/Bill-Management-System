@@ -12,6 +12,7 @@ class DataStorage {
     static private let instance = DataStorage()
     private lazy var customers : [Customer] = []
     private lazy var bills = Dictionary<String, Bill>()
+    //private lazy var bills = Dictionary<String, Array<Bill>>()
     private init(){
         
     }
@@ -25,9 +26,9 @@ class DataStorage {
     func getAllCustomers()->[Customer]{
         return self.customers
     }
-    func getAllBills()->[String:Bill]{
-        return self.bills
-    }
+//    func getAllBills()->[String:Bill]{
+//        return self.bills
+//    }
     
     func loadCustomers(){
         do{
@@ -42,10 +43,16 @@ class DataStorage {
             customers.append(C3)
             customers.append(C4)
             
+            let i3 = DateComponents(calendar: calendar, year: 2019, month: 10, day: 26)
+            let id3 = calendar.date(from: i3)
+            let I3 = Internet(billId: "INT003",billDate: id3!, billType: BillType.Internet, billAmount: 525.7, providerName: "Freedom", internetUsed: 26)
+            bills.updateValue(I3, forKey: "INT003")
+            C1.customerBills.updateValue(I3, forKey: "INT003")
+            
             let h1 = DateComponents(calendar: calendar, year: 2020, month: 01, day: 10)
             let hd1 = calendar.date(from: h1)
             let H1 = Hydro(billId: "HYD001", billDate: hd1!, billType: BillType.Hydro, billAmount: 280.90, agencyName: "Saint John Energy", unitsConsumed: 350)
-            C1.customerBills.updateValue(H1, forKey: "HYD001")
+           C1.customerBills.updateValue(H1, forKey: "HYD001")
             bills.updateValue(H1, forKey: "HYD001")
             let m1 = DateComponents(calendar: calendar, year: 2019, month: 12, day: 21)
             let md1 = calendar.date(from: m1)
@@ -88,9 +95,9 @@ class DataStorage {
             let I2 = Internet(billId: "INT002",billDate: id2!, billType: BillType.Internet, billAmount: 155.9, providerName: "Fido", internetUsed: 1254)
             bills.updateValue(I2, forKey: "INT002")
             C3.customerBills.updateValue(I1, forKey: "INT002")
+            
         }catch LoginError.emailError{
             print("Invalid Email Address")
-            
         }
         catch {
             print("Unrecognised Error")

@@ -47,10 +47,13 @@ class LoginViewController: UIViewController {
     
     @IBAction func btnLogin(_ sender: UIButton) {
         guard let access = getPlist(withName: "AccessUsers") else{
-            print("no no")
+            let alertController = UIAlertController(title: "ERROR", message:
+                "Access Denied", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+            
+            self.present(alertController, animated: true, completion: nil)
             return
-        }
-        
+        } 
         do{
             try login()
             var canEnter = false

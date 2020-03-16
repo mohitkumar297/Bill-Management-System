@@ -15,12 +15,12 @@ class BillDetailsViewController: UIViewController {
     @IBOutlet weak var customerInfo: UILabel!
     lazy var Bills : [Bill] = []
     var customerBill : Customer?
-    
-    
+    lazy var internetArray : [Bill] = []
+    lazy var hydroArray : [Bill] = []
+    lazy var mobileArray : [Bill] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.Bills = (customerBill?.getBills())!
         self.navigationItem.title = "Bill Details"
         let navBar = self.navigationController?.navigationBar
         navBar?.barTintColor = UIColor.gray
@@ -28,23 +28,38 @@ class BillDetailsViewController: UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = UIColor.white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Bill", style: .plain, target: self, action: #selector(addTapped))
         
-    }
+}
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if let id = customerBill?.customerId, let fn = customerBill?.fullName, let em = customerBill?.email, let am = customerBill?.calculatedBill(){
             let formatAmount = "\(am)".formatCurrency()
-            customerInfo.text = "  Customer ID          :    \(id)\n  Customer Name  :    \(fn)\n  Customer Email   :    \(em)\n  Total Bill                   :     \(formatAmount)"
+            customerInfo.text = "  Customer ID          :    \(id)\n  Customer Name   :    \(fn)\n  Customer Email    :    \(em)\n  Total Bill                  :     \(formatAmount)"
             customerInfo.numberOfLines = 0
-            customerInfo.font = UIFont.boldSystemFont(ofSize: 20)
+            customerInfo.font = UIFont.boldSystemFont(ofSize: 19)
             customerInfo.backgroundColor = #colorLiteral(red: 0.9019607843, green: 0.2039215686, blue: 0.3843137255, alpha: 1)
             customerInfo.textColor = #colorLiteral(red: 0.9333333333, green: 0.9607843137, blue: 0.8588235294, alpha: 1)
-            self.Bills = (customerBill?.getBills())!
-            self.tblView.reloadData()
         }
-    }
-    
+        Bills.removeAll()
+        internetArray.removeAll()
+        mobileArray.removeAll()
+        hydroArray.removeAll()
+        self.Bills = (customerBill?.getBills())!
+        for a in Bills{
+                if a.billId.contains("INT"){
+                    internetArray.append(a)
+                }
+                else if a.billId.contains("HYD"){
+                    hydroArray.append(a)
+                }
+                else if a.billId.contains("MOB"){
+                    mobileArray.append(a)
+                }
+            tblView.reloadData()
+        }
+}
+
     @objc func addTapped(){
         let choice = customerBill!
         let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -57,53 +72,96 @@ class BillDetailsViewController: UIViewController {
 extension BillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        3
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+            
+            let label = UILabel()
+            if section == 0{
+                label.text = "  Internet"
+                label.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+                label.font = UIFont.boldSystemFont(ofSize: 20)
+                label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                label.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            }
+            else if section == 1 {
+                label.text = "  Hydro"
+                label.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+                label.font = UIFont.boldSystemFont(ofSize: 20)
+                label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                label.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            }
+            else {
+                label.text = "  Mobile"
+                label.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+                label.font = UIFont.boldSystemFont(ofSize: 20)
+                label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    
+            }
+            return label
+        }
+
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (customerBill?.getBills().count)!
+
+        if section == 0{
+
+            return internetArray.count
+        }
+        else if section == 1 {
+            return hydroArray.count
+            
+        }
+        else{
+            return mobileArray.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "billCell", for: indexPath)
-        let bill = Bills[indexPath.row]
-        
-        if bill.billId.contains("INT"){
+
+            if indexPath.section == 0 {
+            let bill = internetArray[indexPath.row]
             let str = bill.billDate.formatDate()
             let formatBillAmount = "\(bill.billAmount)".formatCurrency()
-            cell.textLabel?.text = "Bill Id                 :   \(bill.billId)\nBill Type           :   Internet\nBill Date           :   \(str)\nBill Amount     :   \(formatBillAmount)"
+            cell.textLabel?.text = "Bill Id               :   \(bill.billId)\nBill Type          :   Internet\nBill Date          :   \(str)\nBill Amount     :   \(formatBillAmount)"
             cell.textLabel?.numberOfLines = 0
         }
         
-        if bill.billId.contains("HYD"){
+        
+            if indexPath.section == 1{
+            let bill = hydroArray[indexPath.row]
             let str = bill.billDate.formatDate()
             let formatBillAmount = "\(bill.billAmount)".formatCurrency()
-            cell.textLabel?.text = "Bill Id                 :   \(bill.billId)\nBill Type           :   Hydro\nBill Date           :   \(str)\nBill Amount     :   \(formatBillAmount)"
+            cell.textLabel?.text = "Bill Id               :   \(bill.billId)\nBill Type          :   Hydro\nBill Date          :   \(str)\nBill Amount     :   \(formatBillAmount)"
+
             cell.textLabel?.numberOfLines = 0
         }
         
-        if bill.billId.contains("MOB"){
+        if indexPath.section == 2{
+            let bill = mobileArray[indexPath.row]
+            
             let str = bill.billDate.formatDate()
             let formatBillAmount = "\(bill.billAmount)".formatCurrency()
-            cell.textLabel?.text = "Bill Id                 :   \(bill.billId)\nBill Type           :   Mobile\nBill Date           :   \(str)\nBill Amount     :   \(formatBillAmount)"
+            cell.textLabel?.text = "Bill Id               :   \(bill.billId)\nBill Type          :   Mobile\nBill Date          :   \(str)\nBill Amount     :   \(formatBillAmount)"
+
             cell.textLabel?.numberOfLines = 0
             
+            }
             
-            
-        }
+        
         return cell
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if(indexPath.row % 2 == 0){
-            cell.backgroundColor = #colorLiteral(red: 0.5137254902, green: 0.5803921569, blue: 0.631372549, alpha: 1)
-            cell.textLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 17)
-            
-        }
-        else {
-            cell.backgroundColor = #colorLiteral(red: 0.8196078431, green: 0.8431372549, blue: 0.8588235294, alpha: 1)
-            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 17)
-        }
-    }
+        cell.backgroundColor = #colorLiteral(red: 0.9215686275, green: 1, blue: 0.9843137255, alpha: 1)
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     
+}
 }
