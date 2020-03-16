@@ -20,8 +20,7 @@ class Customer: IDisplay {
         return "\(firstName) \(lastName)"
     }
     var email: String
-   lazy var customerBills : [String:Bill]=[:]
-//    lazy var customerBills = Dictionary<String, Array<Bill>>()
+    lazy var customerBills : [String:Bill]=[:]
     lazy var totalBill: Double = calculatedBill()
     
     //https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html

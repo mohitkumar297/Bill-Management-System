@@ -35,7 +35,7 @@ class BillDetailsViewController: UIViewController {
         
         if let id = customerBill?.customerId, let fn = customerBill?.fullName, let em = customerBill?.email, let am = customerBill?.calculatedBill(){
             let formatAmount = "\(am)".formatCurrency()
-            customerInfo.text = "  Customer ID          :    \(id)\n  Customer Name   :    \(fn)\n  Customer Email    :    \(em)\n  Total Bill                  :     \(formatAmount)"
+            customerInfo.text = "  Customer ID          :    \(id)\n  Customer Name   :    \(fn)\n  Customer Email    :    \(em)\n  Total Bill                  :    \(formatAmount)"
             customerInfo.numberOfLines = 0
             customerInfo.font = UIFont.boldSystemFont(ofSize: 19)
             customerInfo.backgroundColor = #colorLiteral(red: 0.9019607843, green: 0.2039215686, blue: 0.3843137255, alpha: 1)

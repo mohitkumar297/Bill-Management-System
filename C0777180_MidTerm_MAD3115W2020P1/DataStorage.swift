@@ -12,7 +12,6 @@ class DataStorage {
     static private let instance = DataStorage()
     private lazy var customers : [Customer] = []
     private lazy var bills = Dictionary<String, Bill>()
-    //private lazy var bills = Dictionary<String, Array<Bill>>()
     private init(){
         
     }
@@ -26,10 +25,7 @@ class DataStorage {
     func getAllCustomers()->[Customer]{
         return self.customers
     }
-//    func getAllBills()->[String:Bill]{
-//        return self.bills
-//    }
-    
+
     func loadCustomers(){
         do{
             
