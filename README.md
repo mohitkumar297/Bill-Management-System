@@ -17,6 +17,15 @@ TEST 2 - Adding additional bills. Adding bills into customers and total bill cal
 
 ### Login Screen
 
+#### Username and password that can access
+
+1.  Username - billsystem@gmail.com  Password - billsystem123
+2.  Username - mohit@gmail.com       Password - mohit123
+3.  Username - swift@gmail.com       Password - swift123
+4.  Username - lambton@gmail.com     Password - lambton123
+5.  Username - admin@gmail.com      Password - admin123
+
+
 
 <img src="https://user-images.githubusercontent.com/60120967/76808916-840bc600-67bf-11ea-826c-5be5ad99c17d.png" width="180">
 
